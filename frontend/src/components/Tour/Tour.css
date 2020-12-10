@@ -1,0 +1,39 @@
+.card{
+    background-image: linear-gradient(to bottom right, #ffb366, #ff8080);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.18);
+    padding: 0.1rem;
+    width: 25rem;
+    overflow: hidden;
+
+}
+
+
+
+.container{
+    position: relative;
+    clip-path: polygon(0 0,100% 0,100% 92%, 0 100%);
+}
+
+.card-image{
+    
+    width: 100%;
+    height: 18em;
+    display: block;
+    border-radius: 20px 20px 0px 0;
+}
+
+
+
+
+
+@media screen and (max-width: 768px){
+    .card{
+        width: 90vw;
+        
+    }
+    .card-image{
+        height: 55vh;
+    }
+}
+
