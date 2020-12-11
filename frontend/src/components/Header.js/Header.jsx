@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Burger from './Burger';
 import greektours from './greektours.png'
-
+import {Link} from 'react-router-dom'
 
 const Nav = styled.nav`
 width:100%;
@@ -28,7 +28,7 @@ const Header = () => {
     return ( 
         <Nav >
             <div className='logo'>
-                <img src={greektours} alt="greek tours logo"/>
+                <Link to='/'><img src={greektours} alt="greek tours logo"/></Link>
             </div>
             <Burger/>
         </Nav>

@@ -1,0 +1,68 @@
+.tour-images img{
+    width: 45vw;
+    border: 1px solid black;
+    height: 50vh;
+    border-radius: 10px;
+    margin-bottom: 5rem;
+}
+
+.tour-title{
+    text-align: center;
+}
+
+
+.image-grid-container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr ;
+    gap: 10px;
+    margin: 0 auto;
+    grid-auto-rows: minmax(100px, auto);
+    justify-items: center;
+    
+    
+  }
+  .information {
+      border: 1px solid black;
+      border-radius: 10px;
+      height: 50vh;
+      width:45vw;
+      padding-left: 1rem;
+  }
+
+  
+  @media screen and (max-width: 1424px){
+    .tour-images img{
+        width: 48vw;
+        margin-bottom: 0rem;
+    }
+    .image-grid-container{
+      grid-template-columns: 1fr 1fr ;
+      grid-template-rows: 1fr 1fr;
+      gap: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 950px){
+    .image-grid-container{
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 2fr;
+    }
+  }
+  @media screen and (max-width: 650px){
+      .tour-images img{
+          width: 90vw;
+          margin-bottom: 0rem;
+      }
+      .information{
+        width: 90vw;
+        margin-bottom: 0rem;
+        height: max-content;
+      }
+    .image-grid-container{
+      grid-template-columns: 1fr ;
+      grid-template-rows: 1fr;
+    }
+    
+  }
+  

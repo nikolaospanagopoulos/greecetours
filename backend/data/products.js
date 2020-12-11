@@ -1,10 +1,10 @@
 const products = [
   {
-    _id: '1',
+    
     name: 'Zakinthos ',
     image1: '/images/zante.jpg',
-    image2: '/images/airpods.jpg',
-    image3:'/images/airpods.jpg',
+    image2: '/images/zakinthos2.jpg',
+    image3:'/images/zakinthos3.jpg',
     description:
       'Come and see the amazing island of Zante. Crystal clear seas, hot sun , beach bars and hospitable people! For the culture and history enthusiasts , there are many museums and theaters.',
     place: 'Zakinthos',
@@ -25,7 +25,7 @@ const products = [
 
 
   {
-    _id: '2',
+    
     name: 'Heracleon',
     image1: '/images/herakleon.jpg',
     image2: '/images/airpods.jpg',
@@ -46,7 +46,7 @@ const products = [
     datesAvailable3:'14-7-2021 to 19-7-2021',
     duration:8
   }, {
-    _id: '3',
+    
     name: 'Athens',
     image1: '/images/athens.jpg',
     image2: '/images/airpods.jpg',
@@ -65,8 +65,9 @@ const products = [
     datesAvailable1:'11-6-2021 to 17-6-2021',
     datesAvailable2:'12-7-2021 to 18-6-2021',
     datesAvailable3:'14-8-2021 to 20-8-2021',
-    duration:7
+    duration:7   
   }
 ]
 
 export default products
+ 
