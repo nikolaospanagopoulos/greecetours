@@ -1,31 +1,33 @@
-import React,{useEffect,useState} from 'react';
+import React,{useEffect} from 'react';
+import {useDispatch,useSelector} from 'react-redux'
 import Tour from '../../components/Tour/Tour';
-
+import {listTours} from '../../actions/tourActions'
 import './ProductsPage.css'
-import axios from 'axios'
-
+import Loader from '../../components/Loader/Loader'
+import Message from '../../components/Message/Message'
 const ProductsScreen = () => {
-    const [tours,setTours] = useState([])
+    const dispatch = useDispatch()
+    const tourList = useSelector(state=>state.tourList)
+    const {tours,loading,error} = tourList
+
 
 
     useEffect(()=>{
-        const fetchTours = async () => {
-            const {data} = await axios.get('/api/v1/tours')
-
-            setTours(data)
-        }
-        fetchTours()
-    },[])
+        dispatch(listTours())
+    },[dispatch])
     return (
         <div>
             <h1>Our Tours</h1>
-            <div className="grid-container">
+            {loading ? <Loader/> : error ? <Message color='red'> {error} </Message> : (
+                <div className="grid-container">
                 {tours.map(tour=>( 
                     <div className='grid-item' key={tour._id}>
                        <Tour tour={tour}/>
                     </div>
                 ))}
             </div>
+            )}
+            
         </div>
     );
 }
