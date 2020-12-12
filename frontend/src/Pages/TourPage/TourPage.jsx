@@ -6,8 +6,8 @@ import { tourGetDetails } from "../../actions/tourActions";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../components/Loader/Loader";
 import Message from "../../components/Message/Message";
-const TourPage = ({ match }) => {
-  const [positions, setPositions] = useState(0);
+const TourPage = ({ match,history }) => {
+  const [positions, setPositions] = useState(1);
 
   const dispatch = useDispatch();
 
@@ -17,6 +17,10 @@ const TourPage = ({ match }) => {
   useEffect(() => {
     dispatch(tourGetDetails(match.params.id));
   }, [dispatch, match]);
+
+  const addToCartHandler = () => {
+    history.push(`/cart/${match.params.id}?positions=${positions}`)
+  }
   return (
     <div>
       {loading ? (
@@ -70,7 +74,7 @@ const TourPage = ({ match }) => {
                 </div>
               )}
 
-              <button className="buy-button" disabled={(tour.people === 0)}>
+              <button  onClick={addToCartHandler} className="buy-button" disabled={(tour.people === 0)}>
                 {" "}
                 Add to Cart{" "}
               </button>
