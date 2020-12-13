@@ -9,8 +9,11 @@ const handleClick = () => {
     return (
         <div className='homepage'>
             <div className='homepage-container'>
-            <h1 className='home-title'>Visit the amazing Greece</h1>
-           <button className='btn-homepage' onClick={handleClick}> Our Tours </button>
+            <h1 className='home-title'>Visit the amazing Greek Paradise</h1>
+            <div className='homepage-button-container'>
+            <button className='btn-homepage' onClick={handleClick}> Our Tours </button>
+            </div>
+          
             </div>
            
             
