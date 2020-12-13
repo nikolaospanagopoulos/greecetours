@@ -13,6 +13,17 @@
     
 }
 
+
+
+.icon-button{
+    position: relative;
+    left: 10rem;
+    bottom: 10rem;
+    background-color: tomato;
+    border-radius: 5px;
+}
+
+
 .carttour-select{
     position: relative;
     left: 10rem;
@@ -21,47 +32,89 @@
 
 .options-tour{
     position: relative;
-    left: 5rem;
-    bottom: 42px;
+    width: 50px;
+    border-radius: 5px;
+    outline:none;
+    border-color: blue;
+    bottom:10px
+  }
+.cart-button-container{
+    text-align: center;
+    width: fit-content;
+}
+.cart-button{
+    height: 60px;
+    background-color: rgb(153, 235, 255);
+    border-radius: 10px;
+    outline: none;
+    border-color: black;
+    font-size: 20px;
+}
+.price-cart{
+    text-transform: uppercase;
+    position: relative;
+    bottom: 10vh;
+    width: fit-content;
+
+    left:40vw;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 2rem;
+    
+    
 }
 
 
-@media screen and (width: 1366px){
-    .cart-container{
-        width: fit-content;
-    }
+
+
+
+@media screen and (max-width: 823px){
+    .cart-button-container{
+        display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-
-@media screen and (max-width: 1366px) and (min-width:1024px){
-    
-    .cart-title{
-        width: min-content;
+    .cart-button{
+        margin: -20px -50px; 
+    position:relative;
+    top:50%; 
+    left:32vw;
     }
     
-    
-}
-
-
-@media screen and (max-width: 720px){
-    .carttour-select{
-        left: 8rem;
-    }
-    .cart-container{
-        right:6rem
-    }
-    
-}
-
-@media screen and (max-width:653px){
-    
-    .cart-container{
-        right:6rem
-    }
-    .cart-image{
-        width: 130px;
-
-        border-radius: 50px;
-    }
+    .price-cart{
         
+        width: 80vw;
+        text-align: center;
+        left: 2rem;
+        font-size: 1.5rem;
+    }
+    .cart-button-container{
+        position: relative;
+        padding-left: 0.8rem;
+        padding-right: 0;
+    }
+    .icon-button{
+        left: 8rem;
+        
+        
+    }
+    .carttour-select{
+        left: 72%;
+        width: min-content;
+
+    }
+    .carttour-select h4{
+        position:relative;
+        left: 0rem;
+        text-align: center;
+        bottom: 10px;
+        width: 100px;
+    }
+    .cart-container{
+        right:6rem
+    }
+    
 }
+
+
+

@@ -59,7 +59,7 @@ const TourPage = ({ match,history }) => {
               {tour.people > 0 && (
                 <div  className='cart-select'> <h4>Select places:</h4>
                   <select 
-                    className='options-cart'
+                    className='options-tour-page'
                     
                     value={positions}
                     

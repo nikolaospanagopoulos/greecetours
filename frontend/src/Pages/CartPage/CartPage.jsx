@@ -18,6 +18,16 @@ const CartPage = ({match,location,history}) => {
             dispatch(addToCart(tourId,positions))
         }
     },[dispatch,tourId,positions])
+
+    const removeFromCart = (id) => {
+
+    }
+
+    const checkoutHandler = () => {
+
+    }
+
+
     return ( 
         <div>
             <div>
@@ -29,7 +39,7 @@ const CartPage = ({match,location,history}) => {
                               <div> <img className='cart-image' src={item.image} alt={item.name}/> </div>
                               <div> <Link to={`/tours/tour/${item.tour}`} className='cart-title'> {item.name} </Link> </div>
                               <div> {item.price} $ </div>
-                              <div> <div  className='carttour-select'> <h4 className='selection-text'>Select places:</h4>
+                              <div> <div  className='carttour-select'> <h4 >Select places:</h4>
                   <select 
                     className='options-tour'
                     
@@ -44,11 +54,25 @@ const CartPage = ({match,location,history}) => {
                     ))}
                   </select>{" "}
 
-                </div></div>
+                </div>
+                <div>
+                  <button className='icon-button' onClick={()=>removeFromCart(item.tour)}>
+                    <i className='fas fa-trash '></i>
+                  </button>
+                </div>
+                </div>
                           </div>
                       ))}
                   </div>  
                 )}
+            </div>
+            <div>
+              <div className='price-cart'>
+                your total:  ${cartItems.reduce((acc,item)=>acc + item.positions*item.price,0).toFixed(2)}
+              </div>
+              <div className='cart-button-container'>
+                <button className='cart-button' onClick={() => checkoutHandler()} disabled={cartItems.length === 0}> Proceed to checkout </button>
+              </div>
             </div>
         </div>
      );
