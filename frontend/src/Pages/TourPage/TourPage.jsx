@@ -57,9 +57,9 @@ const TourPage = ({ match,history }) => {
                 <Rating value={tour.rating} text={tour.numReviews} />{" "}
               </h4>
               {tour.people > 0 && (
-                <div  className='tour-select'> <h4>Select places:</h4>
+                <div  className='cart-select'> <h4>Select places:</h4>
                   <select 
-                    className='options-tour'
+                    className='options-cart'
                     
                     value={positions}
                     

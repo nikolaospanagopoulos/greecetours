@@ -46,6 +46,7 @@ const RightNav = ({open,setOpen}) => {
         <Ul open={open} onClick={handleClick}>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/tours'>Tours</Link></li>
+                <li><Link to='/cart'>Cart</Link></li>
                 <li>Services</li>
                 <li>About</li>
                 <li>Contact</li>
