@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react';
 import {useDispatch,useSelector} from 'react-redux'
 import Message from '../../components/Message/Message'
-import {addToCart} from '../../actions/cartActions'
+import {addToCart,cartRemoveItem} from '../../actions/cartActions'
 import {Link} from 'react-router-dom'
 import './CartPage.css'
 const CartPage = ({match,location,history}) => {
@@ -19,12 +19,12 @@ const CartPage = ({match,location,history}) => {
         }
     },[dispatch,tourId,positions])
 
-    const removeFromCart = (id) => {
-
+    const removeFromCartHandler = (id) => {
+      dispatch(cartRemoveItem(id))
     }
 
     const checkoutHandler = () => {
-
+      history.push('/login?redirect=information')
     }
 
 
@@ -56,7 +56,7 @@ const CartPage = ({match,location,history}) => {
 
                 </div>
                 <div>
-                  <button className='icon-button' onClick={()=>removeFromCart(item.tour)}>
+                  <button className='icon-button' onClick={()=>removeFromCartHandler(item.tour)}>
                     <i className='fas fa-trash '></i>
                   </button>
                 </div>
