@@ -2,15 +2,15 @@ import {TOUR_LIST_REQUEST,TOUR_LIST_SUCCESS,TOUR_LIST_FAIL, TOUR_DETAILS_REQUEST
 import axios from 'axios'
 
 
-export const listTours = () => async (dispatch) => {
+export const listTours = (sort='') => async (dispatch) => {
     try{
         dispatch({type:TOUR_LIST_REQUEST})
 
-        const {data} = await axios.get('/api/v1/tours')
+        const {data} = await axios.get(`/api/v1/tours?sort=${sort}`)
 
         dispatch({
             type:TOUR_LIST_SUCCESS,
-            payload:data
+            payload:data.data
         })
     }catch(error){
         dispatch({

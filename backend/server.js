@@ -1,5 +1,5 @@
 import express from 'express'
-const app = express()
+
 import dotenv from 'dotenv'
 import colors from 'colors'
 import connectDB from './config/db.js'
@@ -8,8 +8,8 @@ import {notFound,errorHandler} from './Middleware/errorMiddleware.js'
 dotenv.config()
 
 connectDB()
-
- 
+const app = express()
+app.use(express.json())
 app.get('/',(req,res) => {
     res.send('Api is running')
 })

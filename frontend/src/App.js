@@ -14,7 +14,7 @@ function App() {
       <main>
       <Route path='/cart/:id?'  component={CartPage}/>
       <Route path='/tours/tour/:id'  component={TourPage}/>
-      <Route path='/tours'  exact component={ProductsPage}/>
+      <Route path='/tours/:sort?'  component={ProductsPage}/>
       <Route path='/' exact component={HomePage}/>
       </main>
       <Footer />
