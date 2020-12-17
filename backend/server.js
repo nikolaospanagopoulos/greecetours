@@ -11,6 +11,7 @@ import {notFound,errorHandler} from './Middleware/errorMiddleware.js'
 
 connectDB()
 const app = express()
+
 app.use(express.json())
 app.get('/',(req,res) => {
     res.send('Api is running')
