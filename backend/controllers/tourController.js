@@ -8,7 +8,7 @@ const getTours = asyncHandler(async(req,res,next) => {
     const reqQuery = {...req.query}
 
 
-    const removeFields = ['select','sort']
+    const removeFields = ['select','sort','page','limit']
 
     removeFields.forEach(param =>delete reqQuery[param] )
     let queryStr = JSON.stringify(reqQuery)
@@ -34,9 +34,39 @@ const getTours = asyncHandler(async(req,res,next) => {
 
 
 
+
+    //pagination
+
+    const page = parseInt(req.query.page,10) || 1
+    const limit = parseInt(req.query.limit,10) || 20
+    const starIndex = (page-1) * limit;
+    const endIndex = page * limit
+    const total = await Tour.countDocuments()
+
+
+
+    query = query.skip(starIndex).limit(limit)
+
     const tours = await query
+
+    //pagination result
+    const pagination = {}
+
+    if(endIndex < total){
+        pagination.next = {
+            page: page + 1,
+            limit
+        }
+    }
+
+    if(starIndex > 0) {
+        pagination.prev = {
+            page: page - 1,
+            limit
+        }
+    }
     res.status(200)
-    .json({success:true,count:tours.length,data:tours})
+    .json({success:true,count:tours.length, pagination, data:tours})
 })
 
 const getTourById = asyncHandler(async(req,res) => {

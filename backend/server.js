@@ -1,11 +1,13 @@
 import express from 'express'
 
 import dotenv from 'dotenv'
+dotenv.config({path:'.env'})
 import colors from 'colors'
 import connectDB from './config/db.js'
 import tourRoutes from './routes/tourRoutes.js'
+import userRoutes from './routes/userRoutes.js'
 import {notFound,errorHandler} from './Middleware/errorMiddleware.js'
-dotenv.config()
+
 
 connectDB()
 const app = express()
@@ -16,7 +18,7 @@ app.get('/',(req,res) => {
 
 
 app.use('/api/v1/tours',tourRoutes)
-
+app.use('/api/v1/users',userRoutes)
 
 
 app.use(notFound)
