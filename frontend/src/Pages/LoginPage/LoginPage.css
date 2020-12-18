@@ -1,0 +1,66 @@
+
+
+.login-title{
+    text-align: center;
+}
+
+.email-container-login{
+    text-align: center;
+    margin-top: 4rem;
+}
+
+
+.email-container-login input{
+    width: 20vw;
+    border-color: blue;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    color: green;
+}
+
+.password-container-login{
+    text-align: center;
+    margin-top: 1rem;
+    position: relative;
+    left: 14px;
+}
+
+.password-container-login input{
+    width: 20vw;
+    border-color: blue;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    color: green;
+}
+
+
+.login-button-container{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: 10rem;
+}
+
+.login-button-container button{
+    margin: 0 ;
+    width: 10vw;
+    height: 50px;
+    outline: none;
+    border-color: blue;
+    transition: 0.5s all;
+    cursor: pointer;
+   
+
+}
+
+.login-button-container button:hover{
+    background-color: lightgreen;
+}
+
+
+.login-redirect{
+    text-align: center;
+    
+}

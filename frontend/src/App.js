@@ -4,6 +4,7 @@ import Footer from "./components/Footer.js/Footer";
 import ProductsPage from "./Pages/ProductsPage/ProductsPage";
 import TourPage from './Pages/TourPage/TourPage';
 import CartPage from './Pages/CartPage/CartPage'
+import LoginPage from './Pages/LoginPage/LoginPage'
 import HomePage from './Pages/HomePage/HomePage.jsx'
 import "./App.css";
 
@@ -12,6 +13,7 @@ function App() {
     <Router>
       <Header />
       <main>
+      <Route path='/login'  component={LoginPage}/>
       <Route path='/cart/:id?'  component={CartPage}/>
       <Route path='/tours/tour/:id'  component={TourPage}/>
       <Route path='/tours/:sort?' exact  component={ProductsPage}/>

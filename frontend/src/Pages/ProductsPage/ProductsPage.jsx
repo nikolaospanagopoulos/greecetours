@@ -16,7 +16,7 @@ const ProductsScreen = ({match,history}) => {
 
     useEffect(()=>{
         dispatch(listTours(sort))
-        console.log(sort)
+        
     },[dispatch,sort,history])
     return (
         <div>
