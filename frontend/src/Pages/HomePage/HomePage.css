@@ -46,6 +46,7 @@
 @media screen and (max-width: 823px){
   .homepage{
     background-size: cover;
+    margin: 0 auto;
   }
   .home-title{
     margin-top: 12rem;

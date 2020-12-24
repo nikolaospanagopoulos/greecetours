@@ -11,7 +11,22 @@ const Ul = styled.ul`
   li {
     padding: 18px 15px;
   }
-
+a{
+  text-decoration:none;
+  color:black;
+}
+  .logoutlink{
+    
+    text-align:center;
+    border-top:0px;
+    background-image: linear-gradient(to top ,#4dff4d, #66ffe0);
+    
+    
+  }
+.logoutlink a{
+  text-decoration:none;
+  color:black;
+}
   @media (max-width: 768px) {
     flex-flow: column nowrap;
     background-color: #66ff66;
@@ -64,8 +79,8 @@ const RightNav = ({ open, setOpen,history }) => {
             <Link to="/profile"   >{userInfo.name}</Link>
           </li>
           {menuAppear && (
-              <li>
-              <button onClick={() => logoutHandler()}>Logout</button>
+              <li className='logoutlink'>
+              <Link  to='/' onClick={() => logoutHandler()}>Logout</Link >
             </li>
           )}
           

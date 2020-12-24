@@ -6,12 +6,27 @@
 
 .email-container-login{
     text-align: center;
+    margin-top: 1rem;
+}
+.name-container-login{
+    text-align: center;
     margin-top: 4rem;
+    position: relative;
+    left: 28px;
 }
 
-
+.name-container-login input{
+    width: 28vw;
+    position: relative;
+    left:0.1rem;
+    border-color: blue;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    color: green;
+}
 .email-container-login input{
-    width: 20vw;
+    width: 28vw;
     border-color: blue;
     height: 30px;
     outline: none;
@@ -23,11 +38,11 @@
     text-align: center;
     margin-top: 1rem;
     position: relative;
-    left: 14px;
+    left: 17px;
 }
 
 .password-container-login input{
-    width: 20vw;
+    width: 28vw;
     border-color: blue;
     height: 30px;
     outline: none;
