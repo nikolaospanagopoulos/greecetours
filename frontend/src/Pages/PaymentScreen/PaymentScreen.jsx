@@ -1,70 +1,48 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {savePaymentData} from '../../actions/cartActions'
-import CheckoutSteps from '../../components/checkoutSteps/CheckoutSteps'
-const TourBuyScreen = ({ history }) => {
+import { savePaymentMethod } from "../../actions/cartActions";
+import CheckoutSteps from "../../components/checkoutSteps/CheckoutSteps";
+import "./PaymentScreen.css";
+const PaymentScreen = ({ history }) => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch()
+  const cart = useSelector((state) => state.cart);
+  const { paymentData } = cart;
 
+  if (!paymentData) {
+    history.push("/tourbuy");
+  }
 
-    const cart = useSelector(state => state.cart)
-    const {paymentData} = cart
-
-
-
-
-  const [address, setAddress] = useState(paymentData.address); 
-  const [city, setCity] = useState(paymentData.city);
-  const [postalCode, setPostalCode] = useState(paymentData.country);
+  const [paymentMethod, setPaymentMethod] = useState("PayPal");
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    dispatch(savePaymentData({address,city,postalCode}))
-    history.push('/payment')
+    dispatch(savePaymentMethod(paymentMethod));
+    history.push("/finalize");
   };
 
   return (
     <div>
-      <h1>Fill in your information</h1>
-      <CheckoutSteps step1 step2/>
+      <CheckoutSteps step3 />
+      <h1 className="payment-screen-title">Choose Payment Method</h1>
       <form onSubmit={onFormSubmit}>
-        <div className="address-container-login">
-          <label>Address: </label>
+        <div className="payment-screen-method">
+         <label htmlFor="">PayPal</label>
           <input
-            type="text"
-            placeholder="your address..."
-            value={address}
-            required
-            onChange={(e) => setAddress(e.target.value)}
+            type="radio"
+            id="PayPal"
+            name="paymentMethod"
+            value="PayPal"
+            checked
+            onChange={(e) => setPaymentMethod(e.target.value)}
           />
         </div>
-
-        <div className="city-container-login">
-          <label>City: </label>
-          <input
-            type="text"
-            placeholder="city..."
-            value={city}
-            required
-            onChange={(e) => setCity(e.target.value)}
-          />
+        <div className='payment-screen-button-container'>
+          <button type="submit"> Continue </button>
         </div>
-
-        <div className="pcode-container-login">
-          <label>Postal Code: </label>
-          <input
-            type="text"
-            placeholder="postal code..."
-            value={postalCode}
-            required
-            onChange={(e) => setPostalCode(e.target.value)}
-          />
-        </div>
-
-        <button type="submit"> Submit </button>
       </form>
     </div>
   );
 };
 
-export default TourBuyScreen;
+export default PaymentScreen;

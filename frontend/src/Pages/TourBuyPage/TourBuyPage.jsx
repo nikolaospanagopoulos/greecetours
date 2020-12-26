@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {savePaymentData} from '../../actions/cartActions'
 import CheckoutSteps from '../../components/checkoutSteps/CheckoutSteps'
+import './TourBuyPage.css'
+
 const TourBuyScreen = ({ history }) => {
 
     const dispatch = useDispatch()
@@ -25,10 +27,15 @@ const TourBuyScreen = ({ history }) => {
 
   return (
     <div>
-      <h1>Fill in your information</h1>
+      
       <CheckoutSteps step1 step2/>
+      <h1 className='payment-data-title'>Fill in your information</h1>
       <form onSubmit={onFormSubmit}>
-        <div className="address-container-login">
+      
+        <div className='pay-data-container'>
+
+        
+        <div className="address-container-pay">
           <label>Address: </label>
           <input
             type="text"
@@ -36,10 +43,11 @@ const TourBuyScreen = ({ history }) => {
             value={address}
             required
             onChange={(e) => setAddress(e.target.value)}
+            className='address'
           />
         </div>
 
-        <div className="city-container-login">
+        <div className="city-container">
           <label>City: </label>
           <input
             type="text"
@@ -50,7 +58,7 @@ const TourBuyScreen = ({ history }) => {
           />
         </div>
 
-        <div className="pcode-container-login">
+        <div className="pcode-container">
           <label>Postal Code: </label>
           <input
             type="text"
@@ -60,9 +68,13 @@ const TourBuyScreen = ({ history }) => {
             onChange={(e) => setPostalCode(e.target.value)}
           />
         </div>
-
-        <button type="submit"> Submit </button>
+        <div className='payment-data-submit-button-container'>
+        <button type="submit" className='submit-payment-data'> Submit </button>
+        </div>
+       
+        </div>
       </form>
+    
     </div>
   );
 };

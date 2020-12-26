@@ -30,6 +30,7 @@ const Ul = styled.ul`
     color: black;
   }
   @media (max-width: 768px) {
+    border:1px solid black;
     flex-flow: column nowrap;
     background-color: #66ff66;
     position: fixed;

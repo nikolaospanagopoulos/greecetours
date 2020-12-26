@@ -1,0 +1,34 @@
+.payment-screen-title{
+    text-align: center;
+    margin-top: 8rem;
+}
+
+.payment-screen-method{
+    text-align: center;
+}
+
+.payment-screen-button-container{
+    width: 100vw;
+    text-align: center;
+    margin-top: 2rem;
+
+}
+
+.payment-screen-button-container button{
+    margin: 0 auto;
+    height: 40px;
+    width:20%;
+    margin-left: 2rem;
+    background-color: transparent;
+    outline: none;
+    border-radius: 10px;
+    border-color: lime;
+    transition: 0.4s all;
+
+}
+
+.payment-screen-button-container button:hover{
+    background-color: teal;
+    text-transform: uppercase;
+    color: wheat;
+}

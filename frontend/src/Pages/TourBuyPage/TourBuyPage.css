@@ -1,0 +1,91 @@
+.pay-data-container {
+  position: relative;
+  left: 40%;
+  margin-top: 5rem;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
+.pay-data-container label{
+  text-align: center;
+}
+
+.pay-data-container input{
+    text-align: center;
+    width: 15vw;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    border-color: lime;
+    
+  }
+.pay-data-container div{
+    margin-top: 2rem;
+}
+
+  .payment-data-title{
+      text-align: center;
+      margin-top: 5rem;
+  }
+
+
+  .city-container label{
+      margin-left: 1.88rem;
+  }
+
+  .pcode-container input{
+      position: relative;
+      right: 1.6rem;
+  }
+
+  .pcode-container label{
+      position: relative;
+      right: 1.5vw;
+  }
+
+
+  .payment-data-submit-button-container{
+      
+      text-align: center;
+  }
+  .submit-payment-data {
+    margin: 0 auto;
+    height: 40px;
+    width:50%;
+    margin-left: 2rem;
+    background-color: transparent;
+    outline: none;
+    border-radius: 10px;
+    border-color: lime;
+    transition: 0.4s all;
+  }
+
+  .submit-payment-data:hover{
+      background-color: teal;
+      text-transform: uppercase;
+      color: wheat;
+  }
+
+
+  @media screen and (max-width: 823px){
+      .pay-data-container{
+          
+          left: 10%;
+      }
+      .pay-data-container input{
+          width: 40vw;
+      }
+      .pcode-container label{
+        
+        right: 7vw;
+    }
+    .payment-data-title{
+        text-align: center;
+        margin-top: 3rem;
+        font-size: 1.5rem;
+    }
+  }
