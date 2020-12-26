@@ -6,7 +6,7 @@ import { tourGetDetails } from "../../actions/tourActions";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../components/Loader/Loader";
 import Message from "../../components/Message/Message";
-const TourPage = ({ match,history }) => {
+const TourPage = ({ match, history }) => {
   const [positions, setPositions] = useState(1);
 
   const dispatch = useDispatch();
@@ -19,8 +19,8 @@ const TourPage = ({ match,history }) => {
   }, [dispatch, match]);
 
   const addToCartHandler = () => {
-    history.push(`/cart/${match.params.id}?positions=${positions}`)
-  }
+    history.push(`/cart/${match.params.id}?positions=${positions}`);
+  };
   return (
     <div>
       {loading ? (
@@ -46,9 +46,9 @@ const TourPage = ({ match,history }) => {
               <h4>Meals included: {tour.meals} </h4>
               <h4>Price per person : {tour.price} </h4>
               <h4> Duration: {tour.duration} days </h4>
-              <h4>Available Dates: &nbsp;</h4>
+              <h4>Available Dates: &nbsp; {tour.datesAvailable}</h4>
               <div>
-                {tour.people> 0
+                {tour.people > 0
                   ? "Seats available!"
                   : "all places are booked!"}
               </div>
@@ -57,24 +57,28 @@ const TourPage = ({ match,history }) => {
                 <Rating value={tour.rating} text={tour.numReviews} />{" "}
               </h4>
               {tour.people > 0 && (
-                <div  className='cart-select'> <h4>Select places:</h4>
-                  <select 
-                    className='options-tour-page'
-                    
+                <div className="cart-select">
+                  {" "}
+                  <h4>Select places:</h4>
+                  <select
+                    className="options-tour-page"
                     value={positions}
-                    
                     onChange={(e) => setPositions(e.target.value)}
                   >
                     {[...Array(tour.people).keys()].map((x) => (
                       <option key={x + 1} value={x + 1}>
-                         {x + 1}
+                        {x + 1}
                       </option>
                     ))}
                   </select>{" "}
                 </div>
               )}
 
-              <button  onClick={addToCartHandler} className="buy-button" disabled={(tour.people === 0)}>
+              <button
+                onClick={addToCartHandler}
+                className="buy-button"
+                disabled={tour.people === 0}
+              >
                 {" "}
                 Add to Cart{" "}
               </button>

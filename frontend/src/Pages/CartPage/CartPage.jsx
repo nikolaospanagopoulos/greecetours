@@ -24,7 +24,7 @@ const CartPage = ({match,location,history}) => {
     }
 
     const checkoutHandler = () => {
-      history.push('/login?redirect=information')
+      history.push('/login?redirect=tourbuy')
     }
 
 

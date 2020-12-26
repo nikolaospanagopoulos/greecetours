@@ -16,9 +16,8 @@ const products = [
     HotelName :'Star hotel',
     numReviews: 10,
     meals:'breakfast',
-    datesAvailable1:'11-6-2021 to 20-6-2021',
-    datesAvailable2:'12-7-2021 to 21-6-2021',
-    datesAvailable3:'14-8-2021 to 23-8-2021',
+    datesAvailable:'11-6-2021 to 20-6-2021',
+    
     duration:10
   },
 
@@ -41,9 +40,8 @@ const products = [
     HotelName :'Crete hotel',
     numReviews: 8,
     meals:'breakfast',
-    datesAvailable1:'13-5-2021 to 20-5-2021',
-    datesAvailable2:'15-8-2021 to 22-8-2021',
-    datesAvailable3:'14-7-2021 to 19-7-2021',
+    datesAvailable:'13-5-2021 to 20-5-2021',
+    
     duration:8
   }, {
     
@@ -62,9 +60,8 @@ const products = [
     HotelName :'Athens hotel',
     numReviews: 20,
     meals:'breakfast',
-    datesAvailable1:'11-6-2021 to 17-6-2021',
-    datesAvailable2:'12-7-2021 to 18-6-2021',
-    datesAvailable3:'14-8-2021 to 20-8-2021',
+    datesAvailable:'11-6-2021 to 17-6-2021',
+
     duration:7   
   }
 ]

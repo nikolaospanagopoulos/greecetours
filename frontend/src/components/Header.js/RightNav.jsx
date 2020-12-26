@@ -11,22 +11,24 @@ const Ul = styled.ul`
   li {
     padding: 18px 15px;
   }
-a{
-  text-decoration:none;
-  color:black;
-}
-  .logoutlink{
-    
-    text-align:center;
-    border-top:0px;
-    background-image: linear-gradient(to top ,#4dff4d, #66ffe0);
-    
-    
+  a {
+    text-decoration: none;
+    color: black;
   }
-.logoutlink a{
-  text-decoration:none;
-  color:black;
-}
+  .logoutlink {
+    text-align: center;
+    border-top: 0px;
+    background-image: linear-gradient(to top, #4dff4d, #66ffe0);
+  }
+  .logoutlink2 {
+    text-align: center;
+    border-top: 0px;
+    background-image: linear-gradient(to top, #66ffe0, #4dff4d);
+  }
+  .logoutlink a {
+    text-decoration: none;
+    color: black;
+  }
   @media (max-width: 768px) {
     flex-flow: column nowrap;
     background-color: #66ff66;
@@ -45,9 +47,8 @@ a{
   }
 `;
 
-const RightNav = ({ open, setOpen,history }) => {
-
-    const [menuAppear,setMenuAppear] = useState(false)
+const RightNav = ({ open, setOpen, history }) => {
+  const [menuAppear, setMenuAppear] = useState(false);
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
@@ -60,7 +61,11 @@ const RightNav = ({ open, setOpen,history }) => {
     dispatch(logout());
   };
   return (
-    <Ul open={open} onClick={handleClick}  onMouseEnter={()=>setMenuAppear(false)}>
+    <Ul
+      open={open}
+      onClick={handleClick}
+      onMouseEnter={() => setMenuAppear(false)}
+    >
       <li>
         <Link to="/">Home</Link>
       </li>
@@ -74,16 +79,27 @@ const RightNav = ({ open, setOpen,history }) => {
       <li>About</li>
       <li>Contact</li>
       {userInfo ? (
-        <div onMouseEnter={()=>setMenuAppear(!menuAppear)}  onMouseLeave={()=>setMenuAppear(false)}>
-          <li >
-            <Link to="/profile"   >{userInfo.name}</Link>
+        <div
+          onMouseEnter={() => setMenuAppear(!menuAppear)}
+          onMouseLeave={() => setMenuAppear(false)}
+        >
+          <li>
+            <Link to="/profile">{userInfo.name}</Link>
           </li>
           {menuAppear && (
-              <li className='logoutlink'>
-              <Link  to='/' onClick={() => logoutHandler()}>Logout</Link >
-            </li>
+            <div>
+              <li className="logoutlink">
+                <Link to="/" onClick={() => logoutHandler()}>
+                  Logout
+                </Link>
+              </li>
+              <li className="logoutlink2">
+                <Link to="/" onClick={() => logoutHandler()}>
+                  Orders
+                </Link>
+              </li>
+            </div>
           )}
-          
         </div>
       ) : (
         <li>

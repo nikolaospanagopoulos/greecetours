@@ -74,21 +74,12 @@ const tourSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    datesAvailable1:{
+    datesAvailable:{
         type:String,
         required:true,
 
     },
-    datesAvailable2:{
-        type:String,
-        required:true,
-
-    },
-    datesAvailable3:{
-        type:String,
-        required:true,
-
-    },
+  
     duration:{
         type:Number,
         required:true
