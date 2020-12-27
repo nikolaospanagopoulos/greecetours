@@ -8,6 +8,7 @@ import LoginPage from './Pages/LoginPage/LoginPage'
 import HomePage from './Pages/HomePage/HomePage.jsx'
 import RegisterPage from './Pages/RegisterPage/registerPage'
 import TourBuyPage from './Pages/TourBuyPage/TourBuyPage'
+import FinalizePage from './Pages/FinalizePage/FinalizePage'
 import ProfileScreen from './Pages/ProfilePage/ProfilePage'
 import PaymentScreen from './Pages/PaymentScreen/PaymentScreen'
 import "./App.css";
@@ -17,6 +18,7 @@ function App() {
     <Router>
       <Header />
       <main>
+      <Route path='/finalize'  component={FinalizePage}/>
       <Route path='/tourbuy'  component={TourBuyPage}/>
       <Route path='/login'  component={LoginPage}/>
       <Route path='/payment'  component={PaymentScreen}/>

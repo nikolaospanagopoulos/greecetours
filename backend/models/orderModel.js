@@ -9,15 +9,21 @@ const orderSchema = mongoose.Schema({
     orderItems:[{
         name:{type:String,required:true},
         people:{type:Number,required:true},
-        image1:{type:String,required:true},
+        image:{type:String,required:true},
         price:{type:Number,required:true},
-        product:{
+        tour:{
             type:mongoose.Schema.Types.ObjectId,
             required:true,
             ref:'Tour'
         }
 
     }],
+    paymentData: {
+        address: { type: String, required: true },
+        city: { type: String, required: true },
+        postalCode: { type: String, required: true },
+       
+      },
     paymentMethod:{
         type:String,
         required:true
@@ -54,20 +60,7 @@ const orderSchema = mongoose.Schema({
     startedAt:{
         type:Date
     },
-    email:{
-        type:String,
-        required:true,
-        unique:true
-    },
-    password:{
-        type:String,
-        required:true
-    },
-    isAdmin:{
-        type:Boolean,
-        required:true,
-        default:false
-    }
+    
 },{
     timestamps:true
 })

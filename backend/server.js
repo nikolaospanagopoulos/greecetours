@@ -7,7 +7,7 @@ import connectDB from './config/db.js'
 import tourRoutes from './routes/tourRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import {notFound,errorHandler} from './Middleware/errorMiddleware.js'
-
+import orderRoutes from './routes/orderRoutes.js'
 
 connectDB()
 const app = express()
@@ -20,7 +20,7 @@ app.get('/',(req,res) => {
 
 app.use('/api/v1/tours',tourRoutes)
 app.use('/api/v1/users',userRoutes)
-
+app.use('/api/v1/orders',orderRoutes)
 
 app.use(notFound)
 
