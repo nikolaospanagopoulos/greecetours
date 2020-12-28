@@ -1,0 +1,82 @@
+.client-information{
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.client-information strong{
+    color: lime;
+    
+}
+
+.client-information img{
+    width: 15%;
+    
+    border-radius: 25px;
+}
+
+.client-information a{
+    text-decoration: none;
+    color: lime;
+}
+
+.purchase-summury{
+    padding-bottom: 20px;
+    border: 2px solid black;
+    width: 20%;
+    text-align: center;
+    position: absolute;
+    bottom: 55vh;
+
+}
+
+.purchase-summury div{
+    margin: 12px;
+    border-bottom: 1px solid black;
+}
+
+.purchase-button-container{
+    width: 100vw;
+    position: absolute;
+    top: 60vh;
+    right: 39%;
+    text-align: center;
+}
+
+.purchase-button-container button{
+    margin: 0;
+    height: 50px;
+    text-transform: uppercase;
+    background-color: transparent;
+    border-color: lime;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.5s all;
+
+}
+
+.purchase-button-container button:hover{
+    background-color: teal;
+    color: white;
+
+}
+
+
+
+@media screen and (max-width: 950px){
+   .purchase-summury{
+       position: static;
+       text-align: center;
+       margin: 0 auto;
+       width: fit-content;
+       padding: 10px;
+       margin-top: 2rem;
+   }
+   .purchase-summury h2{
+       font-size: 1.45rem;
+   }
+   .purchase-button-container{
+       position: static;
+       margin-top: 2rem;
+       margin-bottom: 1rem;
+   }
+}
