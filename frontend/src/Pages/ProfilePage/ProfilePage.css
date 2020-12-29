@@ -1,0 +1,143 @@
+.profile-container{
+    width: 100%;
+    text-align: left;
+    margin-left: 32vw;
+  
+}
+.name-container-profile{
+    
+    margin-top: 1rem;
+}
+.name-container-profile input{
+    width: 31.3vw;
+    position: relative;
+    left:0.1rem;
+    border-color: blue;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    color: green;
+}
+
+.email-container-profile{
+   
+    margin-top: 1rem;
+}
+.email-container-profile input{
+    width: 28vw;
+    position: relative;
+    left:0.1rem;
+    border-color: blue;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    color: green;
+}
+
+
+
+.password-container-profile{
+    
+    margin-top: 1rem;
+}
+.password-container-profile input{
+    width: 30vw;
+    position: relative;
+    left:0.1rem;
+    border-color: blue;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    color: green;
+}
+
+
+
+.password-container-profile-confirm{
+   
+    margin-top: 1rem;
+}
+
+
+.password-container-profile-confirm input{
+    width: 26.5vw;
+    position: relative;
+    left:0.1rem;
+    border-color: blue;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    color: green;
+}
+
+
+.order-table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+
+.order-table th,td{
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #000;
+    
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+
+.order-button-container{
+    text-align: center;
+    margin-top: 3rem;
+    width: 35vw;
+}
+
+.order-button-container button{
+    height: 40px;
+    width: 100px;
+    background-color: transparent;
+    outline: none;
+    border-color: lime;
+    border-radius: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin: 0 auto;
+}
+
+.order-button-container button:hover{
+    background-color: teal;
+    color: white;
+}
+
+.profile-orders-title{
+    text-align: center;
+}
+
+
+@media screen and (max-width: 823px){
+    .profile-container{
+        width: min-content;
+        margin-left: 25vw;
+    }
+    .name-container-profile input{
+        width: fit-content;
+    }
+    .email-container-profile input{
+        width: fit-content;
+    }
+    .password-container-profile input{
+        width: fit-content;
+    }
+    .password-container-profile-confirm input{
+        width: fit-content;
+    }
+    .order-button-container{
+        width: 50vw;
+    }
+    .order-table a{
+        margin-right: 2rem;
+    }
+
+}

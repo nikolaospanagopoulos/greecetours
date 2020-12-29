@@ -84,11 +84,7 @@ const tourSchema = mongoose.Schema({
         type:Number,
         required:true
     },
-    isAdmin:{
-        type:Boolean,
-        required:true,
-        default:false
-    }
+    
 },{
     timestamps:true
 })

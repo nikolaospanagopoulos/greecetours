@@ -5,13 +5,14 @@ import CheckoutSteps from "../../components/checkoutSteps/CheckoutSteps";
 import { Link } from "react-router-dom";
 import { createOrder } from "../../actions/orderActions";
 import "./FinalizePage.css";
-
+import { ORDER_CREATE_RESET } from "../../constants/orderConstants";
+import {USER_DETAILS_RESET} from '../../constants/userConstants'
 const FinalizePage = ({ history }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
 
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
+  //const userLogin = useSelector((state) => state.userLogin);
+  //const { userInfo } = userLogin;
 
   const addDecimals = (num) => {
     return (Math.round(num * 100) / 100).toFixed(2);
@@ -32,8 +33,11 @@ const FinalizePage = ({ history }) => {
   useEffect(() => {
     if (success) {
       history.push(`/order/${order._id}`);
+      history.go()
+      dispatch({type:USER_DETAILS_RESET})
+      dispatch({ type: ORDER_CREATE_RESET })
     }
-  }, [history, success]);
+  }, [history, success,order,dispatch]);
 
   const placeOrderHandler = () => {
     dispatch(
@@ -56,10 +60,7 @@ const FinalizePage = ({ history }) => {
           <div>
             <h2> Client Information: </h2>
             <p style={{ display: "flex", flexDirection: "column" }}>
-              <strong> Name: </strong>
-              {userInfo.name}
-              <strong> Email: </strong>
-              {userInfo.email}
+             
               <strong> Address: </strong>
               {cart.paymentData.address}
               <strong> City: </strong>
@@ -122,7 +123,7 @@ const FinalizePage = ({ history }) => {
           <div className='purchase-button-container'>
             <button
               type="button"
-              onClick={() => placeOrderHandler()}
+              onClick={ placeOrderHandler}
               disabled={cart.cartItems === 0}
             >
               {" "}
