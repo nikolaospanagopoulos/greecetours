@@ -11,7 +11,9 @@ import TourBuyPage from "./Pages/TourBuyPage/TourBuyPage";
 import FinalizePage from "./Pages/FinalizePage/FinalizePage";
 import ProfileScreen from "./Pages/ProfilePage/ProfilePage";
 import OrderPage from "./Pages/OrderPage/OrderPage";
+import UserEditPage from './Pages/UserEditPage/UserEditPage';
 import PaymentScreen from "./Pages/PaymentScreen/PaymentScreen";
+import UserListPage from './Pages/UserListPage/UserListPage'
 import "./App.css";
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
         <Route path="/cart/:id?" component={CartPage} />
         <Route path="/tours/tour/:id" component={TourPage} />
         <Route path="/tours/:sort?" exact component={ProductsPage} />
+        <Route path="/admin/userlist" component={UserListPage} />
+        <Route path="/admin/user/:id/edit" component={UserEditPage} />
         <Route path="/" exact component={HomePage} />
       </main>
       <Footer />

@@ -1,0 +1,89 @@
+.name-container-profile-edit{
+    margin-top: 1rem;
+}
+
+.admin-users-page-link{
+    text-decoration: none;
+   
+    
+}
+
+
+.admin-users-page-link button{
+    background-color: none;
+    border-color: lime;
+    width: 100px;
+    height: 30px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+
+.admin-users-title{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.name-container-profile-edit input{
+    width: 31.3vw;
+    position: relative;
+    left:0.1rem;
+    border-color: blue;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    color: green;
+
+}
+
+.email-container-profile-edit{
+    margin-top: 1rem;
+}
+
+.email-container-profile-edit input{
+    width: 28vw;
+    position: relative;
+    left:0.1rem;
+    border-color: blue;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    color: green;
+
+}
+
+.admin-container-profile-edit{
+    margin-top: 1rem;
+    
+}
+
+.admin-container-profile-edit input{
+    cursor: pointer;
+    
+    
+}
+
+
+.admin-users-button-container{
+    text-align: center;
+    margin-top: 3rem;
+    width: 35vw;
+}
+
+
+.admin-users-button-container button{
+    height: 40px;
+    width: 100px;
+    background-color: transparent;
+    outline: none;
+    border-color: lime;
+    border-radius: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin: 0 auto;
+}
+.admin-users-button-container button:hover{
+    background-color: teal;
+    color: white;
+}

@@ -3,9 +3,16 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { tourListReducer, tourDetailsReducer } from "./reducers/tourReducers";
 import { cartReducer } from "./reducers/cartReducer";
-import {orderCreateReducer, orderDetailsReducer, orderListMyReducer, orderPayReducer} from './reducers/orderReducer'
 import {
+  orderCreateReducer,
+  orderDetailsReducer,
+  orderListMyReducer,
+  orderPayReducer,
+} from "./reducers/orderReducer";
+import {
+  userDeleteReducer,
   userDetailsReducer,
+  userListReducer,
   userLoginReducer,
   userRegisterReducer,
   userUpdateProfileReducer,
@@ -16,12 +23,14 @@ const reducer = combineReducers({
   cart: cartReducer,
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
+  userList: userListReducer,
   userDetails: userDetailsReducer,
   userUpdateProfile: userUpdateProfileReducer,
-  orderCreate:orderCreateReducer,
-  orderDetails:orderDetailsReducer,
-  orderPay:orderPayReducer,
-  orderMyList:orderListMyReducer
+  userDelete:userDeleteReducer,
+  orderCreate: orderCreateReducer,
+  orderDetails: orderDetailsReducer,
+  orderPay: orderPayReducer,
+  orderMyList: orderListMyReducer,
 });
 
 const cartItemsFromStorage = localStorage.getItem("cartItems")
@@ -36,7 +45,10 @@ const paymentDataFromStorage = localStorage.getItem("paymentData")
   : {};
 
 const initialState = {
-  cart: { cartItems: cartItemsFromStorage,paymentData:paymentDataFromStorage },
+  cart: {
+    cartItems: cartItemsFromStorage,
+    paymentData: paymentDataFromStorage,
+  },
   userLogin: { userInfo: userInfoFromStorage },
 };
 

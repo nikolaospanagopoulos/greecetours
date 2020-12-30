@@ -94,11 +94,14 @@ const RightNav = ({ open, setOpen, history }) => {
                   Logout
                 </Link>
               </li>
-              <li className="logoutlink2">
-                <Link to="/" onClick={() => logoutHandler()}>
-                  Orders
+              {userInfo && userInfo.isAdmin && (
+                <li className="logoutlink2">
+                <Link to="/admin/userlist">
+                  Users
                 </Link>
               </li>
+              )}
+              
             </div>
           )}
         </div>

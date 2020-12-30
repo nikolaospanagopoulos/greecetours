@@ -1,0 +1,12 @@
+.users-title{
+    text-align: center;
+}
+
+.users-table{
+    width: 100vw;
+    text-align: left;
+}
+
+.users-table td{
+    border: 1px solid black;
+}
