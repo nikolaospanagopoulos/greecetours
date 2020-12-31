@@ -1,0 +1,17 @@
+.paypal-buttons{
+    width: 20vw;
+    position: absolute;
+    bottom: 18vh;
+}
+
+@media screen and (max-width: 823px){
+    .paypal-buttons{
+        
+        margin: 0 auto;
+        position: static;
+        width: 70vw;
+        margin-top: 5rem;
+       
+    }
+
+}

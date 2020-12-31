@@ -26,50 +26,65 @@
   justify-items: center;
 }
 .information {
-  border: 1px solid black;
+  
   border-radius: 10px;
-  height: 50vh;
-  width: 45vw;
+  text-align: center;
   padding-left: 1rem;
+  width: fit-content;
+}
+
+
+.information strong{
+  color: lime;
+  -webkit-text-stroke: 0.5px black;
+}
+
+.tour-description {
+  display: static;
+  margin: 0 auto;
+  padding: 0;
+  width: 50%;
+  
 }
 
 .buy-button {
   height: 40px;
+  display: block;
   width: 100px;
-  border-color: blue;
+  border-color: lime;
   outline: none;
   border-radius: 10px;
   cursor: pointer;
   font-size: 0.9rem;
-  position: relative;
-  left: 40%;
-  bottom: 40%;
+  margin-top: 2rem;
+  margin: 0 auto;
+  
+  
 }
 
 .buy-button:hover {
-  background-color: lightblue;
+  background-color: teal;
+  color: white;
+  text-transform: uppercase;
 }
 
 .buy-button:active {
   transform: scale(1.1);
 }
 
-.cart-select {
-  position: relative;
-  left: 17rem;
-  bottom: 15rem;
-  display: flex;
+.cart-select{
+  display: inline-flex;
+  text-align: center;
+  margin-bottom: 1rem;
+  
 }
-.options-tour-page {
-  position: relative;
-  width: 50px;
-  border-radius: 5px;
-  outline: none;
-  top: 23px;
-  left: 5px;
-  height: 20px;
-  border-color: blue;
+
+.cart-select select{
+  height: 30px;
+  margin-left: 1rem;
+  align-self: center;
 }
+
 @media screen and (max-width: 1424px) {
   .tour-images img {
     width: 48vw;
@@ -98,7 +113,9 @@
 @media screen and (max-width: 650px) {
   .tour-images img {
     width: 90vw;
-    margin-bottom: 0rem;
+    margin-bottom: 2rem;
+    border-radius: 0px 100px 0px 100px;
+    
   }
   .information {
     width: 90vw;

@@ -7,6 +7,7 @@ import { getOrderDetails, payOrder } from "../../actions/orderActions";
 import axios from "axios";
 import { PayPalButton } from "react-paypal-button-v2";
 import { ORDER_PAY_RESET } from "../../constants/orderConstants";
+import "./OrderPage.css";
 
 const OrderPage = ({ match }) => {
   const orderId = match.params.id;
@@ -142,7 +143,7 @@ const OrderPage = ({ match }) => {
           </div>
         </div>
         {!order.isPaid && (
-          <div>
+          <div className="paypal-buttons">
             {loadingPay && <Loader />}
             {!sdkReady ? (
               <Loader />

@@ -36,32 +36,35 @@ const TourPage = ({ match, history }) => {
             <img src={tour.image1} alt="" />
             <img src={tour.image2} alt="" />
             <img src={tour.image3} alt="" />
-            <div className="information">
-              <h4> Description: {tour.description} </h4>
-              <h4> Hotel name: {tour.HotelName} </h4>
+            <img src={tour.image4} alt="" />
+            
+          </div>
+          <div className='information'>
+              <h4 className='tour-description'> <strong >Description: </strong> {tour.description} </h4>
+              <h4> <strong>Hotel Name: </strong>{tour.HotelName} </h4>
               <h4>
                 {" "}
-                Hotel rating: <Rating value={tour.HotelStars} />{" "}
+                <strong>Hotel Rating: </strong> <Rating value={tour.HotelStars} />{" "}
               </h4>
-              <h4>Meals included: {tour.meals} </h4>
-              <h4>Price per person : {tour.price} </h4>
-              <h4> Duration: {tour.duration} days </h4>
-              <h4>Available Dates: &nbsp; {tour.datesAvailable}</h4>
+              <h4> <strong>Meals included:</strong> {tour.meals} </h4>
+              <h4><strong>Price per person :</strong> {tour.price}€ </h4>
+              <h4> <strong>Duration :</strong> {tour.duration} days </h4>
+              <h4> <strong>Available Dates :</strong> {tour.datesAvailable}</h4>
               <div>
                 {tour.people > 0
-                  ? "Seats available!"
-                  : "all places are booked!"}
+                  ? <strong>Seats Available</strong>
+                  : <strong>All Seats Are Booked</strong>}
               </div>
               <h4>
-                Tour Reviews:{" "}
+              <strong>Tour Reviews:</strong>{" "}
                 <Rating value={tour.rating} text={tour.numReviews} />{" "}
               </h4>
               {tour.people > 0 && (
                 <div className="cart-select">
                   {" "}
-                  <h4>Select places:</h4>
+                  <h4><strong>Select Number Of Seats:</strong></h4>
                   <select
-                    className="options-tour-page"
+                   
                     value={positions}
                     onChange={(e) => setPositions(e.target.value)}
                   >
@@ -83,7 +86,6 @@ const TourPage = ({ match, history }) => {
                 Add to Cart{" "}
               </button>
             </div>
-          </div>
         </div>
       )}
     </div>

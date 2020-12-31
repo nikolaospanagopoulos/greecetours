@@ -23,7 +23,14 @@ const Ul = styled.ul`
   .logoutlink2 {
     text-align: center;
     border-top: 0px;
+  
     background-image: linear-gradient(to top, #66ffe0, #4dff4d);
+  }
+  .logoutlink3 {
+    text-align: center;
+    border-top: 0px;
+   
+    background-image: linear-gradient(to top, #4dff4d, #66ffe0);
   }
   .logoutlink a {
     text-decoration: none;
@@ -95,11 +102,20 @@ const RightNav = ({ open, setOpen, history }) => {
                 </Link>
               </li>
               {userInfo && userInfo.isAdmin && (
+                <div>
+
+                
                 <li className="logoutlink2">
                 <Link to="/admin/userlist">
                   Users
                 </Link>
               </li>
+              <li className="logoutlink3">
+              <Link to="/admin/tourlist">
+                Product List
+              </Link>
+            </li>
+            </div>
               )}
               
             </div>

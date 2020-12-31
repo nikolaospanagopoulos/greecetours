@@ -5,9 +5,10 @@ const products = [
     image1: '/images/zante.jpg',
     image2: '/images/zakinthos2.jpg',
     image3:'/images/zakinthos3.jpg',
+    image4:'/images/airpods.jpg',
     description:
       'Come and see the amazing island of Zante. Crystal clear seas, hot sun , beach bars and hospitable people! For the culture and history enthusiasts , there are many museums and theaters.',
-    place: 'Zakinthos',
+    place:'Zakinthos',
     category: 'luxury tour',
     price: 79.99,
     people: 2,
@@ -29,6 +30,7 @@ const products = [
     image1: '/images/herakleon.jpg',
     image2: '/images/airpods.jpg',
     image3:'/images/airpods.jpg',
+    image4:'/images/airpods.jpg',
     description:
       'One of the most beautiful and big islands of Greece is Crete. Full of rich traditions and customs. There is also a huge variety of museums and archeological sites. We offer a tour of the amazing city of Heracleon and the villages around it',
     place: 'Heracleon',
@@ -49,6 +51,7 @@ const products = [
     image1: '/images/athens.jpg',
     image2: '/images/airpods.jpg',
     image3:'/images/airpods.jpg',
+    image4:'/images/airpods.jpg',
     description:
       'Athens is one of the most ancient cities of the world. A place rich of arts, history, culture, traditions and incredible food. Our experienced guides take you to museums, ancient theaters, beautiful places and they also explain a lot about the history of such an amazing city',
     place: 'Athens',

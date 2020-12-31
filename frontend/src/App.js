@@ -11,9 +11,11 @@ import TourBuyPage from "./Pages/TourBuyPage/TourBuyPage";
 import FinalizePage from "./Pages/FinalizePage/FinalizePage";
 import ProfileScreen from "./Pages/ProfilePage/ProfilePage";
 import OrderPage from "./Pages/OrderPage/OrderPage";
-import UserEditPage from './Pages/UserEditPage/UserEditPage';
+import UserEditPage from "./Pages/UserEditPage/UserEditPage";
+import TourListPage from "./Pages/TourListPage/TourListPage";
 import PaymentScreen from "./Pages/PaymentScreen/PaymentScreen";
-import UserListPage from './Pages/UserListPage/UserListPage'
+import TourEditPage from "./Pages/TourEditPage/TourEditPage";
+import UserListPage from "./Pages/UserListPage/UserListPage";
 import "./App.css";
 
 function App() {
@@ -32,7 +34,10 @@ function App() {
         <Route path="/tours/tour/:id" component={TourPage} />
         <Route path="/tours/:sort?" exact component={ProductsPage} />
         <Route path="/admin/userlist" component={UserListPage} />
+
         <Route path="/admin/user/:id/edit" component={UserEditPage} />
+        <Route path="/admin/tourlist" component={TourListPage} />
+        <Route path="/admin/tour/:id/edit" component={TourEditPage} />
         <Route path="/" exact component={HomePage} />
       </main>
       <Footer />

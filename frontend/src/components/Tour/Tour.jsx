@@ -14,7 +14,7 @@ const Tour = ({tour}) => {
             </div>
             
             <div className='details'>
-            <Link to={`/tours/tour/${tour._id}`}>
+            <Link to={`/tours/tour/${tour._id}`} className='product-link'>
                 <h3> {tour.name} </h3>
                 </Link>
                 <Rating value={tour.rating} text={`${tour.numReviews} reviews`}/>
