@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
 import { tourGetDetails, updateTour } from "../../actions/tourActions";
 import Message from "../../components/Message/Message";
 import Loader from "../../components/Loader/Loader";
@@ -24,7 +25,7 @@ const TourEditPage = ({ match, history }) => {
   const [meals, setMeals] = useState("");
   const [datesAvailable, setDatesAvailable] = useState("");
   const [duration, setDuration] = useState(0);
-
+  const [uploading, setUploading] = useState(false);
   const dispatch = useDispatch();
 
   const tourDetails = useSelector((state) => state.tourDetails);
@@ -88,6 +89,94 @@ const TourEditPage = ({ match, history }) => {
     );
   };
 
+  const uploadFileHandler = async (e) => {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("image", file);
+    setUploading(true);
+
+    try {
+      const config = {
+        headers: {
+          "Content-type": "multipart/form-data",
+        },
+      };
+
+      const { data } = await axios.post("/api/v1/upload", formData, config);
+      setImage1(data);
+      setUploading(false);
+    } catch (error) {
+      console.error(error);
+      setUploading(false);
+    }
+  };
+
+  const uploadFileHandler2 = async (e) => {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("image", file);
+    setUploading(true);
+
+    try {
+      const config = {
+        headers: {
+          "Content-type": "multipart/form-data",
+        },
+      };
+
+      const { data } = await axios.post("/api/v1/upload", formData, config);
+      setImage2(data);
+      setUploading(false);
+    } catch (error) {
+      console.error(error);
+      setUploading(false);
+    }
+  };
+
+  const uploadFileHandler3 = async (e) => {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("image", file);
+    setUploading(true);
+
+    try {
+      const config = {
+        headers: {
+          "Content-type": "multipart/form-data",
+        },
+      };
+
+      const { data } = await axios.post("/api/v1/upload", formData, config);
+      setImage3(data);
+      setUploading(false);
+    } catch (error) {
+      console.error(error);
+      setUploading(false);
+    }
+  };
+
+  const uploadFileHandler4 = async (e) => {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("image", file);
+    setUploading(true);
+
+    try {
+      const config = {
+        headers: {
+          "Content-type": "multipart/form-data",
+        },
+      };
+
+      const { data } = await axios.post("/api/v1/upload", formData, config);
+      setImage4(data);
+      setUploading(false);
+    } catch (error) {
+      console.error(error);
+      setUploading(false);
+    }
+  };
+
   return (
     <div>
       <div>
@@ -137,6 +226,12 @@ const TourEditPage = ({ match, history }) => {
                   value={image1}
                   onChange={(e) => setImage1(e.target.value)}
                 />
+                <input
+                  type="file"
+                  id="image-file"
+                  onChange={uploadFileHandler}
+                />
+                {uploading && <Loader />}
               </div>
 
               <div>
@@ -146,6 +241,12 @@ const TourEditPage = ({ match, history }) => {
                   value={image2}
                   onChange={(e) => setImage2(e.target.value)}
                 />
+                <input
+                  type="file"
+                  id="image-file"
+                  onChange={uploadFileHandler2}
+                />
+                {uploading && <Loader />}
               </div>
 
               <div>
@@ -155,6 +256,12 @@ const TourEditPage = ({ match, history }) => {
                   value={image3}
                   onChange={(e) => setImage3(e.target.value)}
                 />
+                <input
+                  type="file"
+                  id="image-file"
+                  onChange={uploadFileHandler3}
+                />
+                {uploading && <Loader />}
               </div>
 
               <div>
@@ -164,6 +271,12 @@ const TourEditPage = ({ match, history }) => {
                   value={image4}
                   onChange={(e) => setImage4(e.target.value)}
                 />
+                <input
+                  type="file"
+                  id="image-file"
+                  onChange={uploadFileHandler4}
+                />
+                {uploading && <Loader />}
               </div>
 
               <div>
