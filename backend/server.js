@@ -12,7 +12,7 @@ import uploadRoutes from "./routes/uploadRoutes.js";
 
 connectDB();
 const app = express();
-
+app.use(express.json());
 app.use("/api/v1/tours", tourRoutes);
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/orders", orderRoutes);
@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === "production") {
 
   app.get("*",(req,res) => res.sendFile(path.resolve(__dirname,'frontend','build','index.html')));
 } else {
-  app.use(express.json());
+
   app.get("/", (req, res) => {
     res.send("Api is running");
   });
