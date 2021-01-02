@@ -7,6 +7,7 @@ import {
   tourDeleteReducer,
   tourCreateReducer,
   tourUpdateReducer,
+  tourReviewReducer,
 } from "./reducers/tourReducers";
 import { cartReducer } from "./reducers/cartReducer";
 import {
@@ -30,6 +31,7 @@ const reducer = combineReducers({
   tourDelete: tourDeleteReducer,
   tourCreate:tourCreateReducer,
   tourUpdate:tourUpdateReducer,
+  tourReview:tourReviewReducer,
   cart: cartReducer,
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,

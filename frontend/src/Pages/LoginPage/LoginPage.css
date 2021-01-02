@@ -1,21 +1,32 @@
 
+.login-container{
+    width: 100%;
+    text-align: left;
+    margin-left: 32vw;
+  
+}
+.email-container-login{
+    
+    margin-top: 1rem;
+}
+.email-container-login input{
+    width: 31.3vw;
+    position: relative;
+    left:0.1rem;
+    border-color: blue;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    color: green;
+}
+
 
 .login-title{
     text-align: center;
 }
 
-.email-container-login{
-    text-align: center;
-    margin-top: 1rem;
-}
-.name-container-login{
-    text-align: center;
-    margin-top: 4rem;
-    position: relative;
-    left: 28px;
-}
 
-.name-container-login input{
+.email-container-profile input{
     width: 28vw;
     position: relative;
     left:0.1rem;
@@ -25,24 +36,17 @@
     border-radius: 5px;
     color: green;
 }
-.email-container-login input{
-    width: 28vw;
-    border-color: blue;
-    height: 30px;
-    outline: none;
-    border-radius: 5px;
-    color: green;
-}
+
+
 
 .password-container-login{
-    text-align: center;
+    
     margin-top: 1rem;
-    position: relative;
-    left: 17px;
 }
-
 .password-container-login input{
-    width: 28vw;
+    width: 33.3vw;
+    position: relative;
+    left:0.1rem;
     border-color: blue;
     height: 30px;
     outline: none;
@@ -51,27 +55,26 @@
 }
 
 
-.login-button-container{
-    width: 100%;
+
+.login-button-container {
+    width: fit-content;
     text-align: center;
-    position: relative;
-    top: 10rem;
 }
 
 .login-button-container button{
-    margin: 0 ;
-    width: 10vw;
-    height: 50px;
-    outline: none;
-    border-color: blue;
+    height: 45px;
+    margin-top: 4rem;
+    width: 130px;
+    background-color: transparent;
+    border-color: lime;
+    border-radius: 10px;
     transition: 0.5s all;
     cursor: pointer;
-   
-
 }
 
 .login-button-container button:hover{
-    background-color: lightgreen;
+    background-color: teal;
+    color: white;
 }
 
 
@@ -80,14 +83,26 @@
     
 }
 @media screen and (max-width: 823px){
-    .name-container-login{
-        width:fit-content;
+    .login-container{
+        width: min-content;
+        margin-left: 25vw;
     }
-    .email-container-login{
+   
+    .email-container-login input{
         width: fit-content;
     }
-    .password-container-login{
+    .password-container-login input{
         width: fit-content;
     }
-    
+  
+
+    .login-button-container {
+        width: 50vw;
+        text-align: center;
+    }
+
+    .login-button-container button{
+       margin-bottom: 2rem;
+    }
+
 }

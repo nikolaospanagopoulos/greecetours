@@ -1,4 +1,4 @@
-import { TOUR_CREATE_FAIL, TOUR_CREATE_REQUEST, TOUR_CREATE_RESET, TOUR_CREATE_SUCCESS, TOUR_DELETE_FAIL, TOUR_DELETE_REQUEST, TOUR_DELETE_SUCCESS, TOUR_DETAILS_FAIL, TOUR_DETAILS_REQUEST, TOUR_DETAILS_SUCCESS, TOUR_LIST_FAIL, TOUR_LIST_REQUEST, TOUR_LIST_SUCCESS, TOUR_UPDATE_FAIL, TOUR_UPDATE_REQUEST, TOUR_UPDATE_RESET, TOUR_UPDATE_SUCCESS } from "./../constants/tourConstants";
+import { TOUR_CREATE_FAIL, TOUR_CREATE_REQUEST, TOUR_CREATE_RESET, TOUR_CREATE_SUCCESS, TOUR_DELETE_FAIL, TOUR_DELETE_REQUEST, TOUR_DELETE_SUCCESS, TOUR_DETAILS_FAIL, TOUR_DETAILS_REQUEST, TOUR_DETAILS_SUCCESS, TOUR_LIST_FAIL, TOUR_LIST_REQUEST, TOUR_LIST_SUCCESS, TOUR_REVIEW_FAIL, TOUR_REVIEW_REQUEST, TOUR_REVIEW_RESET, TOUR_REVIEW_SUCCESS, TOUR_UPDATE_FAIL, TOUR_UPDATE_REQUEST, TOUR_UPDATE_RESET, TOUR_UPDATE_SUCCESS } from "./../constants/tourConstants";
 
 
 
@@ -15,7 +15,7 @@ export const tourListReducer = (state = {tours:[]},action) => {
     }
 }
 
-export const tourDetailsReducer = (state = {tour:[]},action) => {
+export const tourDetailsReducer = (state = {tour:{reviews:[]}},action) => {
     switch(action.type){
         case TOUR_DETAILS_REQUEST:
             return {loading:true,...state}
@@ -68,6 +68,22 @@ export const tourUpdateReducer = (state = {tour:{}},action) => {
             return {loading:false,error:action.payload}
         case TOUR_UPDATE_RESET:
                 return {tour:{}}
+            default:
+                return state        
+    }
+}
+
+
+export const tourReviewReducer = (state = {},action) => {
+    switch(action.type){
+        case TOUR_REVIEW_REQUEST:
+            return {loading:true}
+        case TOUR_REVIEW_SUCCESS:
+            return {loading:false,success:true}
+        case TOUR_REVIEW_FAIL:
+            return {loading:false,error:action.payload}
+        case TOUR_REVIEW_RESET:
+                return {}
             default:
                 return state        
     }

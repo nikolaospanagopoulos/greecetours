@@ -14,6 +14,9 @@ import {
   TOUR_UPDATE_REQUEST,
   TOUR_UPDATE_SUCCESS,
   TOUR_UPDATE_FAIL,
+  TOUR_REVIEW_REQUEST,
+  TOUR_REVIEW_SUCCESS,
+  TOUR_REVIEW_FAIL,
 } from "../constants/tourConstants";
 import axios from "axios";
 
@@ -150,6 +153,41 @@ export const updateTour = (tour) => async (dispatch, getState) => {
   } catch (error) {
     dispatch({
       type: TOUR_UPDATE_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
+
+export const createTourReview = (tourId,review) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: TOUR_REVIEW_REQUEST,
+    });
+
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
+    const config = {
+      headers: {
+        'Content-Type':'application/json',
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    };
+
+    await axios.post(`/api/v1/tours/${tourId}/reviews`, review,config);
+
+    dispatch({
+      type: TOUR_REVIEW_SUCCESS,
+
+    });
+  } catch (error) {
+    dispatch({
+      type: TOUR_REVIEW_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message

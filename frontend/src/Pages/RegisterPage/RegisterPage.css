@@ -1,22 +1,24 @@
+
 .register-container{
     width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    text-align: left;
+    margin-left: 32vw;
+  
 }
-
-
-.register-password-container-login{
-    text-align: center;
+.email-container-register{
+    
     margin-top: 1rem;
-    position: relative;
-    left: -14px;
 }
 
-.register-password-container-login input{
-    width: 28vw;
+.password-container-register{
+    
+    margin-top: 1rem;
+}
+
+.name-container-register input{
+    width: 31.3vw;
     position: relative;
-    left: 0.1rem;
+    left:0.1rem;
     border-color: blue;
     height: 30px;
     outline: none;
@@ -24,3 +26,105 @@
     color: green;
 }
 
+
+
+.email-container-register input{
+    width: 28vw;
+    position: relative;
+    left:0.1rem;
+    border-color: blue;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    color: green;
+}
+
+
+.register-title{
+    text-align: center;
+}
+
+
+.password-container-register input{
+    width: 30vw;
+    position: relative;
+    left:0.1rem;
+    border-color: blue;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    color: green;
+}
+
+
+.password-confirm-register{
+    margin-top: 1rem;
+}
+
+.password-confirm-register input{
+    width: 26.3vw;
+    position: relative;
+    left:0.1rem;
+    border-color: blue;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    color: green;
+}
+
+.register-button-container {
+    width: fit-content;
+    text-align: center;
+}
+
+.register-button-container button{
+    height: 45px;
+    margin-top: 4rem;
+    width: 130px;
+    text-transform: uppercase;
+    background-color: transparent;
+    border-color: lime;
+    border-radius: 10px;
+    transition: 0.5s all;
+    cursor: pointer;
+    margin-bottom: 4rem;
+}
+
+.register-button-container button:hover{
+    background-color: teal;
+    color: white;
+}
+
+
+.login-redirect{
+    text-align: center;
+    
+}
+@media screen and (max-width: 823px){
+    .register-container{
+        width: min-content;
+        margin-left: 25vw;
+    }
+    .name-container-register input{
+        width: fit-content;
+    }
+    .email-container-register input{
+        width: fit-content;
+    }
+    .password-container-register input{
+        width: fit-content;
+    }
+    .password-confirm-register input{
+        width: fit-content;
+    }
+
+    .register-button-container {
+        width: 50vw;
+        text-align: center;
+    }
+
+    .register-button-container button{
+       margin-bottom: 2rem;
+    }
+
+}

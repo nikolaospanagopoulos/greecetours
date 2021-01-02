@@ -52,6 +52,12 @@ const Ul = styled.ul`
 
     li {
     }
+
+    .logoutlink a {
+    text-decoration: none;
+    color: black;
+    
+  }
   }
 `;
 

@@ -87,65 +87,120 @@ const deleteTour = asyncHandler(async (req, res) => {
   }
 });
 
-
 const createTour = asyncHandler(async (req, res) => {
-   const tour = new Tour({
-     name:'sample name',
-     user:req.user._id,
-     image1: '/images/sample.jpg',
-    image2: '/images/sample.jpg',
-    image3:'/images/sample.jpg',
-    image4:'/images/sample.jpg',
-    description:'sample description',
-    place:'sample place',
-    category:'sample category',
-    price:0,
-    people:0,
-    HotelStars:0,
-    HotelName:'hotel',
-    numReviews:0,
-    meals:'meals',
-    datesAvailable:'date',
-    duration:0
-   })
+  const tour = new Tour({
+    name: "sample name",
+    user: req.user._id,
+    image1: "/images/sample.jpg",
+    image2: "/images/sample.jpg",
+    image3: "/images/sample.jpg",
+    image4: "/images/sample.jpg",
+    description: "sample description",
+    place: "sample place",
+    category: "sample category",
+    price: 0,
+    people: 0,
+    HotelStars: 0,
+    HotelName: "hotel",
+    numReviews: 0,
+    meals: "meals",
+    datesAvailable: "date",
+    duration: 0,
+  });
 
-   const createdTour = await tour.save()
-   res.status(201).json(createdTour)
+  const createdTour = await tour.save();
+  res.status(201).json(createdTour);
 });
-
 
 const updateTour = asyncHandler(async (req, res) => {
-  const {name,image1,image2,image3,image4,description,place,category,price,people,HotelStars,HotelName,numReviews,meals,datesAvailable,duration} = req.body
+  const {
+    name,
+    image1,
+    image2,
+    image3,
+    image4,
+    description,
+    place,
+    category,
+    price,
+    people,
+    HotelStars,
+    HotelName,
+    numReviews,
+    meals,
+    datesAvailable,
+    duration,
+  } = req.body;
 
-  const tour = await Tour. findById(req.params.id)
+  const tour = await Tour.findById(req.params.id);
 
-  if(tour){
-    tour.name = name
-    
-    tour.image1 = image1
-    tour.image2 = image2
-    tour.image3 = image3
-    tour.image4 = image4
-    tour.description = description
-    tour.place = place
-    tour.category = category
-    tour.price = price
-    tour.people = people
-    tour.HotelStars = HotelStars
-    tour.HotelName = HotelName
+  if (tour) {
+    tour.name = name;
 
-    tour.meals = meals
-    tour.datesAvailable = datesAvailable
-    tour.duration = duration
+    tour.image1 = image1;
+    tour.image2 = image2;
+    tour.image3 = image3;
+    tour.image4 = image4;
+    tour.description = description;
+    tour.place = place;
+    tour.category = category;
+    tour.price = price;
+    tour.people = people;
+    tour.HotelStars = HotelStars;
+    tour.HotelName = HotelName;
 
+    tour.meals = meals;
+    tour.datesAvailable = datesAvailable;
+    tour.duration = duration;
 
-    const updatedTour = await tour.save()
-  res.json(updatedTour)
-  }else{
-    res.status(404)
-    throw new Error('tour not found')
+    const updatedTour = await tour.save();
+    res.json(updatedTour);
+  } else {
+    res.status(404);
+    throw new Error("tour not found");
   }
-
-  
 });
-export { getTours, getTourById, deleteTour,createTour,updateTour };
+
+const createReview = asyncHandler(async (req, res) => {
+  const { rating, comment } = req.body;
+
+  const tour = await Tour.findById(req.params.id);
+
+  if (tour) {
+    const alreadyReviewd = tour.reviews.find(
+      (r) => r.user.toString() === req.user._id.toString()
+    );
+
+    if (alreadyReviewd) {
+      res.status(400);
+      throw new Error("Tour Already reviewed");
+    }
+
+    const review = {
+      name: req.user.name,
+      rating: Number(rating),
+      comment,
+      user: req.user._id,
+    };
+
+    tour.reviews.push(review)
+    tour.numReviews = tour.reviews.length
+    tour.rating = tour.reviews.reduce((acc,item)=>item.rating + acc ,0)/tour.reviews.length
+    await tour.save()
+
+    await tour.save();
+
+    res.status(201).json({ message: "Review added" });
+  } else {
+    res.status(404);
+    throw new Error("tour not found");
+  }
+});
+export {
+  getTours,
+  getTourById,
+  deleteTour,
+  createTour,
+  updateTour,
+  createReview,
+};

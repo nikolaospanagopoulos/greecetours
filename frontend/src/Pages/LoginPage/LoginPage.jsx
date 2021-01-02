@@ -35,6 +35,9 @@ const LoginScreen = ({location,history}) => {
       {loading  && <Loader/>}
       {error && <Message color='red'> {error} </Message>}
       <form onSubmit={submitHandler}>
+        <div className='login-container'>
+
+        
       <div className='email-container-login'>
         <label>Email Address: </label>
         <input type="email" placeholder="your email..." value={email} onChange={(e)=>setEmail(e.target.value)}/>
@@ -45,6 +48,7 @@ const LoginScreen = ({location,history}) => {
       </div>
       <div className='login-button-container'>
           <button type='submit' > SUBMIT </button>
+      </div>
       </div>
       </form>
       

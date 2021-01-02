@@ -17,7 +17,7 @@ const Tour = ({tour}) => {
             <Link to={`/tours/tour/${tour._id}`} className='product-link'>
                 <h3> {tour.name} </h3>
                 </Link>
-                <Rating value={tour.rating} text={`${tour.numReviews} reviews`}/>
+                <Rating rating={tour.rating} numreviews={`${tour.numReviews} reviews`}/>
                 <p>
                 €{tour.price}
                 </p>

@@ -45,23 +45,23 @@ const RegisterPage = ({location,history}) => {
       {message && <Message color='tomato'> {message} </Message>}
       <form onSubmit={submitHandler}>
           <div className='register-container'>
-      <div className='name-container-login'>
+      <div className='name-container-register'>
         <label>Name: </label>
         <input type="text" placeholder="your name..." value={name} onChange={(e)=>setName(e.target.value)}/>
       </div>
-      <div className='email-container-login'>
+      <div className='email-container-register'>
         <label>Email Address: </label>
         <input type="email" placeholder="your email..." value={email} onChange={(e)=>setEmail(e.target.value)}/>
       </div>
-      <div className='password-container-login'>
+      <div className='password-container-register'>
         <label>Password: </label>
         <input type="password" placeholder="your password..." value={password} onChange={(e)=>setPassword(e.target.value)}/>
       </div>
-      <div className='register-password-container-login'>
+      <div className='password-confirm-register'>
         <label>Confirm Password: </label>
         <input type="password" placeholder="confirm your password..." value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)}/>
       </div>
-      <div className='login-button-container'>
+      <div className='register-button-container'>
           <button type='submit' > Register </button>
       </div>
       </div>
