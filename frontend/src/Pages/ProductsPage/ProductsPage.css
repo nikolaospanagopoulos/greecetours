@@ -20,6 +20,43 @@
   
 }
 
+.sorting{
+  width: fit-content;
+
+}
+
+
+.sorting h4{
+  display: inline;
+  color: lime;
+  -webkit-text-stroke: 0.5px black;
+}
+
+.sorting button{
+  text-transform: uppercase;
+  margin-left: 0.5rem;
+  height: 40px;
+  background-color: transparent;
+  border-color: lime;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s all;
+
+}
+
+
+.tour-page-title{
+  text-align: center;
+  color: lime;
+  -webkit-text-stroke: 0.5px black;
+}
+
+
+.sorting button:hover{
+  color: white;
+  background-color: teal;
+}
 
 
 @media screen and (max-width: 950px){

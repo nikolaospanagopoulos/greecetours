@@ -12,6 +12,7 @@ import FinalizePage from "./Pages/FinalizePage/FinalizePage";
 import ProfileScreen from "./Pages/ProfilePage/ProfilePage";
 import OrderPage from "./Pages/OrderPage/OrderPage";
 import UserEditPage from "./Pages/UserEditPage/UserEditPage";
+import AboutPage from './Pages/AboutPage/AboutPage'
 import TourListPage from "./Pages/TourListPage/TourListPage";
 import PaymentScreen from "./Pages/PaymentScreen/PaymentScreen";
 import TourEditPage from "./Pages/TourEditPage/TourEditPage";
@@ -27,6 +28,7 @@ function App() {
         <Route path="/finalize" component={FinalizePage} />
         <Route path="/tourbuy" component={TourBuyPage} />
         <Route path="/login" component={LoginPage} />
+        <Route path="/about" component={AboutPage} />
         <Route path="/payment" component={PaymentScreen} />
         <Route path="/register" component={RegisterPage} />
         <Route path="/profile" component={ProfileScreen} />

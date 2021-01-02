@@ -23,13 +23,13 @@ const Ul = styled.ul`
   .logoutlink2 {
     text-align: center;
     border-top: 0px;
-  
+
     background-image: linear-gradient(to top, #66ffe0, #4dff4d);
   }
   .logoutlink3 {
     text-align: center;
     border-top: 0px;
-   
+
     background-image: linear-gradient(to top, #4dff4d, #66ffe0);
   }
   .logoutlink a {
@@ -37,7 +37,7 @@ const Ul = styled.ul`
     color: black;
   }
   @media (max-width: 768px) {
-    border:1px solid black;
+    border: 1px solid black;
     flex-flow: column nowrap;
     background-color: #66ff66;
     position: fixed;
@@ -54,10 +54,9 @@ const Ul = styled.ul`
     }
 
     .logoutlink a {
-    text-decoration: none;
-    color: black;
-    
-  }
+      text-decoration: none;
+      color: black;
+    }
   }
 `;
 
@@ -90,8 +89,10 @@ const RightNav = ({ open, setOpen, history }) => {
         <Link to="/cart">Cart</Link>
       </li>
       <li>Services</li>
-      <li>About</li>
-      <li>Contact</li>
+      <li>
+        <Link to="/about">About</Link>
+      </li>
+      
       {userInfo ? (
         <div
           onMouseEnter={() => setMenuAppear(!menuAppear)}
@@ -109,21 +110,14 @@ const RightNav = ({ open, setOpen, history }) => {
               </li>
               {userInfo && userInfo.isAdmin && (
                 <div>
-
-                
-                <li className="logoutlink2">
-                <Link to="/admin/userlist">
-                  Users
-                </Link>
-              </li>
-              <li className="logoutlink3">
-              <Link to="/admin/tourlist">
-                Product List
-              </Link>
-            </li>
-            </div>
+                  <li className="logoutlink2">
+                    <Link to="/admin/userlist">Users</Link>
+                  </li>
+                  <li className="logoutlink3">
+                    <Link to="/admin/tourlist">Product List</Link>
+                  </li>
+                </div>
               )}
-              
             </div>
           )}
         </div>

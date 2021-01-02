@@ -1,0 +1,29 @@
+.aboutPage{
+    text-align: center;
+}
+
+.aboutPage h4{
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.aboutPage h1{
+    color: lime;
+    -webkit-text-stroke: 0.5px black;
+}
+
+.aboutPage h2{
+    color: lime;
+    -webkit-text-stroke: 0.5px black;
+}
+
+.phone-numbers{
+    padding-top: 100px;
+}
+
+@media screen and (max-width: 950px){
+    .phone-numbers{
+        padding: 0;
+        padding-top: 3rem;
+    }
+}

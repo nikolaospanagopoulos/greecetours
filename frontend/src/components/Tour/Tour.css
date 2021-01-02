@@ -33,7 +33,7 @@
 
 @media screen and (max-width: 768px){
     .card{
-        width: 90vw;
+        width: fit-content;
         
     }
     .card-image{

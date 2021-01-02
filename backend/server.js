@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 dotenv.config({ path: ".env" });
 import colors from "colors";
 import connectDB from "./config/db.js";
+
 import tourRoutes from "./routes/tourRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import { notFound, errorHandler } from "./Middleware/errorMiddleware.js";
@@ -17,7 +18,6 @@ app.use("/api/v1/tours", tourRoutes);
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/orders", orderRoutes);
 app.use("/api/v1/upload", uploadRoutes);
-
 app.get("/api/v1/config/paypal", (req, res) =>
   res.send(process.env.PAYPAL_CLIENT_ID)
 );
