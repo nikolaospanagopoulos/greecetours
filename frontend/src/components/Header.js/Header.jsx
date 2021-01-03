@@ -6,7 +6,7 @@ import Burger from "./Burger";
 import { Link } from "react-router-dom";
 
 const Nav = styled.nav`
-@import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap');
+
   width: 100%;
   height: 75px;
 
@@ -27,6 +27,9 @@ const Nav = styled.nav`
   -webkit-text-stroke: 1px black;
 }
 
+.logo a{
+  text-decoration:none;
+}
 
 `;
 
@@ -34,7 +37,7 @@ const Header = () => {
   return (
     <Nav>
       <div className="logo">
-        <Link to="/" style={{textDecoration:'none'}}>
+        <Link to="/" >
           <h3 >GreekTours</h3>
         </Link>
       </div>
