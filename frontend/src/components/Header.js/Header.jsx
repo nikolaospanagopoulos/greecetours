@@ -6,7 +6,6 @@ import Burger from "./Burger";
 import { Link } from "react-router-dom";
 
 const Nav = styled.nav`
-
   width: 100%;
   height: 75px;
 
@@ -22,6 +21,7 @@ const Nav = styled.nav`
 
 .logo h3{
   font-size:1.8rem;
+  
   color:white;
   margin-left:10px;
   -webkit-text-stroke: 1px black;

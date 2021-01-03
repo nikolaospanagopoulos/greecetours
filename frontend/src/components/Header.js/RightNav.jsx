@@ -17,13 +17,14 @@ const Ul = styled.ul`
   a {
     text-decoration: none;
     color: black;
+    font-size:1.4rem;
     text-transform: uppercase;
     font-family: 'Sue Ellen Francisco', cursive;
     -webkit-text-stroke: 0.5px black;
   }
 
   a:hover {
-    color: blue;
+    color: teal;
   }
   .logoutlink {
     text-align: center;
