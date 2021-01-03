@@ -13,14 +13,7 @@ const Ul = styled.ul`
     padding: 18px 15px;
   }
   a {
-    font-family: 'Sue Ellen Francisco', cursive;
-    
-    text-decoration:none;
-
-    color: black;
-    text-transform: uppercase;
-    
-    -webkit-text-stroke: 1px black;
+   
   }
 
   a:hover {
@@ -49,7 +42,14 @@ const Ul = styled.ul`
   }
 
 .header-link{
-  
+  font-family: 'Sue Ellen Francisco', cursive;
+    
+    text-decoration:none;
+
+    color: black;
+    text-transform: uppercase;
+    
+    -webkit-text-stroke: 1px black;
   
 }
 
