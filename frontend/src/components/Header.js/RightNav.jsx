@@ -17,7 +17,7 @@ const Ul = styled.ul`
   a {
     text-decoration: none;
     color: black;
-    font-size:1.4rem;
+    font-size:1.22rem;
     text-transform: uppercase;
     font-family: 'Sue Ellen Francisco', cursive;
     -webkit-text-stroke: 0.5px black;
@@ -43,9 +43,22 @@ const Ul = styled.ul`
 
     background-image: linear-gradient(to top, #4dff4d, #66ffe0);
   }
+
+  .logoutlink4 {
+    text-align: center;
+    border-top: 0px;
+
+    background-image: linear-gradient(to top, #66ffe0, #4dff4d)
+  }
+
   .logoutlink a {
     text-decoration: none;
     color: black;
+  }
+
+  .special-links{
+    position: relative;
+    bottom:1rem;
   }
   @media (max-width: 768px) {
     border: 1px solid black;
@@ -115,7 +128,7 @@ const RightNav = ({ open, setOpen, history }) => {
             <Link to="/profile">{userInfo.name}</Link>
           </li>
           {menuAppear && (
-            <div>
+            <div className='special-links'>
               <li className="logoutlink">
                 <Link to="/" onClick={() => logoutHandler()}>
                   Logout
@@ -128,6 +141,9 @@ const RightNav = ({ open, setOpen, history }) => {
                   </li>
                   <li className="logoutlink3">
                     <Link to="/admin/tourlist">Product List</Link>
+                  </li>
+                  <li className="logoutlink4">
+                    <Link to="/admin/orderlist">Order List</Link>
                   </li>
                 </div>
               )}

@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "./../../components/Message/Message";
 import Loader from "../../components/Loader/Loader";
 import { Link } from "react-router-dom";
-import { getOrderDetails, payOrder } from "../../actions/orderActions";
+import { getOrderDetails, payOrder, startOrder } from "../../actions/orderActions";
 import axios from "axios";
 import { PayPalButton } from "react-paypal-button-v2";
-import { ORDER_PAY_RESET } from "../../constants/orderConstants";
+import { ORDER_PAY_RESET,ORDER_STARTED_RESET } from "../../constants/orderConstants";
 import "./OrderPage.css";
 
 const OrderPage = ({ match }) => {
@@ -24,6 +24,10 @@ const OrderPage = ({ match }) => {
   const orderPay = useSelector((state) => state.orderPay);
   const { loading: loadingPay, success: successPay } = orderPay;
 
+  const orderStarted = useSelector((state) => state.orderStarted);
+  const { loading:loadingStart, success:successStart } = orderStarted;
+
+
   useEffect(() => {
     const addPayPalScript = async () => {
       const { data: clientId } = await axios.get("/api/v1/config/paypal");
@@ -36,8 +40,10 @@ const OrderPage = ({ match }) => {
       };
       document.body.appendChild(script);
     };
-    if (!order || successPay || order._id !== orderId) {
+    if (!order || successPay || order._id !== orderId || successStart) {
+
       dispatch({ type: ORDER_PAY_RESET });
+      dispatch({type:ORDER_STARTED_RESET})
       dispatch(getOrderDetails(orderId));
     } else if (!order.isPaid) {
       if (!window.paypal) {
@@ -46,12 +52,18 @@ const OrderPage = ({ match }) => {
         setSdkReady(true);
       }
     }
-  }, [order, orderId, dispatch, successPay]);
+  }, [order, orderId, dispatch, successPay,successStart]);
 
   const successPaymentHandler = (paymentResult) => {
     console.log(paymentResult);
     dispatch(payOrder(orderId, paymentResult));
   };
+
+
+  const startHandler = () => {
+    dispatch(startOrder(order))
+  }
+
   return loading ? (
     <Loader />
   ) : error ? (
@@ -153,8 +165,15 @@ const OrderPage = ({ match }) => {
                 onSuccess={successPaymentHandler}
               />
             )}
+           
           </div>
         )}
+        {loadingStart && <Loader/>}
+         {userInfo.isAdmin && order.isPaid && !order.tourStarted && (
+              <div>
+                <button type='button' onClick={()=>startHandler()}> Start Tour </button>
+              </div>
+            )}
       </div>
     </div>
   );

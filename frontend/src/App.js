@@ -18,6 +18,7 @@ import TourListPage from "./Pages/TourListPage/TourListPage";
 import PaymentScreen from "./Pages/PaymentScreen/PaymentScreen";
 import TourEditPage from "./Pages/TourEditPage/TourEditPage";
 import UserListPage from "./Pages/UserListPage/UserListPage";
+import OrderListPage from './Pages/OrderListPage/OrderListPage'
 import "./App.css";
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <Route path="/admin/user/:id/edit" component={UserEditPage} />
         <Route path="/admin/tourlist" component={TourListPage} />
         <Route path="/admin/tour/:id/edit" component={TourEditPage} />
+        <Route path="/admin/orderlist" component={OrderListPage} />
         <Route path="/" exact component={HomePage} />
       </main>
       <Footer />

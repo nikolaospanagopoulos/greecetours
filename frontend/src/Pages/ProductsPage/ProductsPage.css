@@ -29,6 +29,7 @@
 .sorting h4{
   display: inline;
   color: lime;
+  
   -webkit-text-stroke: 0.5px black;
 }
 
@@ -42,13 +43,16 @@
   border-radius: 10px;
   cursor: pointer;
   transition: 0.5s all;
+  
 
 }
 
 
 .tour-page-title{
   text-align: center;
+ ;
   color: lime;
+  
   -webkit-text-stroke: 0.5px black;
 }
 

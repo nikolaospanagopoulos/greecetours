@@ -6,7 +6,7 @@ import services3 from '../../pictures/service3.jpg'
 const ServicesPage = () => {
     return (
         <div className='services-grid'>
-            <h1 className='grid-title'>Click on a card to know more</h1>
+            <h1 className='grid-title'>Touch on a card to know more</h1>
             <div className='flip-card'>
                 <div className='flip-card-inner'>
                     <div className='flip-card-front'>

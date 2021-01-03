@@ -9,16 +9,20 @@
   margin-top: 1rem;
     text-align: center;
     max-width: 100vw;
+    
+    
 }
 .btn-homepage {
   padding: 14px 65px;
   top: 15vw;
+  margin-right: 1rem;
   background:rgba(255,255, 255, 0.4);
   overflow: hidden;
   transition: 1s all ease;
   border-radius: 10px;
   cursor: pointer;
   font-size: 1.5rem;
+  
   border: 2px solid #ff7675;
   margin:0;
   margin-top: 1rem; 
@@ -42,6 +46,7 @@
 
 .homepage-container{
     height: max-content;
+    
 }
 
 
