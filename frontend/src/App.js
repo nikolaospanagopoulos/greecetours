@@ -9,6 +9,7 @@ import HomePage from "./Pages/HomePage/HomePage.jsx";
 import RegisterPage from "./Pages/RegisterPage/registerPage";
 import TourBuyPage from "./Pages/TourBuyPage/TourBuyPage";
 import FinalizePage from "./Pages/FinalizePage/FinalizePage";
+import ServicesPage from './Pages/ServicesPage/ServicesPage'
 import ProfileScreen from "./Pages/ProfilePage/ProfilePage";
 import OrderPage from "./Pages/OrderPage/OrderPage";
 import UserEditPage from "./Pages/UserEditPage/UserEditPage";
@@ -27,6 +28,7 @@ function App() {
         <Route path="/order/:id" component={OrderPage} />
         <Route path="/finalize" component={FinalizePage} />
         <Route path="/tourbuy" component={TourBuyPage} />
+        <Route path="/services" component={ServicesPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/payment" component={PaymentScreen} />

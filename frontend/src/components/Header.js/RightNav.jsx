@@ -14,6 +14,13 @@ const Ul = styled.ul`
   a {
     text-decoration: none;
     color: black;
+    text-transform: uppercase;
+
+    -webkit-text-stroke: 0.5px black;
+  }
+
+  a:hover {
+    color: blue;
   }
   .logoutlink {
     text-align: center;
@@ -88,11 +95,13 @@ const RightNav = ({ open, setOpen, history }) => {
       <li>
         <Link to="/cart">Cart</Link>
       </li>
-      <li>Services</li>
+      <li>
+        <Link to="/services">Services</Link>
+      </li>
       <li>
         <Link to="/about">About</Link>
       </li>
-      
+
       {userInfo ? (
         <div
           onMouseEnter={() => setMenuAppear(!menuAppear)}
