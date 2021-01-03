@@ -24,19 +24,10 @@ const Nav = styled.nav`
   font-size:1.8rem;
   color:white;
   margin-left:10px;
+  -webkit-text-stroke: 1px black;
 }
 
-  a{
-    font-family: 'Sue Ellen Francisco', cursive;
-    text-decoration:'none';
-  
 
-    color: black;
-    text-transform: uppercase;
-    
-    -webkit-text-stroke: 1px black;
-  
-  }
 `;
 
 const Header = () => {

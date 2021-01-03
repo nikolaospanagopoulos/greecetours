@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../actions/userActions";
+
 const Ul = styled.ul`
   list-style: none;
   display: flex;
@@ -12,11 +13,14 @@ const Ul = styled.ul`
     padding: 18px 15px;
   }
   a {
-    text-decoration: none;
+    font-family: 'Sue Ellen Francisco', cursive;
+    
+    text-decoration:none;
+
     color: black;
     text-transform: uppercase;
-
-    -webkit-text-stroke: 0.5px black;
+    
+    -webkit-text-stroke: 1px black;
   }
 
   a:hover {
@@ -43,6 +47,13 @@ const Ul = styled.ul`
     text-decoration: none;
     color: black;
   }
+
+.header-link{
+  
+  
+}
+
+
   @media (max-width: 768px) {
     border: 1px solid black;
     flex-flow: column nowrap;
@@ -64,6 +75,8 @@ const Ul = styled.ul`
       text-decoration: none;
       color: black;
     }
+
+
   }
 `;
 
@@ -87,7 +100,7 @@ const RightNav = ({ open, setOpen, history }) => {
       onMouseEnter={() => setMenuAppear(false)}
     >
       <li>
-        <Link to="/">Home</Link>
+        <Link className='header-link'  to="/">Home</Link>
       </li>
       <li>
         <Link to="/tours">Tours</Link>
