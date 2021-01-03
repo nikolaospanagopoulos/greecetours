@@ -30,7 +30,7 @@ const Nav = styled.nav`
     font-family: 'Sue Ellen Francisco', cursive;
     text-decoration:'none';
   
-    text-decoration: none;
+
     color: black;
     text-transform: uppercase;
     
@@ -43,8 +43,8 @@ const Header = () => {
   return (
     <Nav>
       <div className="logo">
-        <Link to="/">
-          <h3 style={{}}>GreekTours</h3>
+        <Link to="/" style={{textDecoration:'none'}}>
+          <h3 >GreekTours</h3>
         </Link>
       </div>
       <Burger />

@@ -42,7 +42,7 @@
   position: relative;
   width: 35vw;
 
-  transform: skew(18deg);
+  transform: skew(8deg);
   height: 45vh;
   margin-top: 2rem;
   background-image: linear-gradient(to bottom right, #ffb366, #ff8080);
