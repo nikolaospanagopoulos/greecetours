@@ -79,12 +79,7 @@
 }
 
 
-.cart-button:hover{
-    background-color: teal;
-    color:white;
-    transform: scale(1.05);
-    
-}
+
 
 
 .price-cart{
