@@ -23,13 +23,15 @@
   cursor: pointer;
   font-size: 1.5rem;
   
-  border: 2px solid #ff7675;
+  border: 2px solid #4dff4d;
   margin:0;
   margin-top: 1rem; 
 }
 
 .btn-homepage:hover{
     background-color: teal;
+    color:white;
+    transform: scale(1.01);
 }
 
 

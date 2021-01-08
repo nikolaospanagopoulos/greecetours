@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`take a tour snapshot 1`] = `
+<div
+  className="card"
+>
+  <div
+    className="container"
+  >
+    <Link
+      to="/tours/tour/undefined"
+    >
+      <img
+        alt="tour poster"
+        className="card-image"
+      />
+    </Link>
+  </div>
+  <div
+    className="details"
+  >
+    <Link
+      className="product-link"
+      to="/tours/tour/undefined"
+    >
+      <h3>
+         
+         
+      </h3>
+    </Link>
+    <Rating
+      color="blue"
+      numreviews="undefined reviews"
+    />
+    <p>
+      €
+    </p>
+  </div>
+</div>
+`;

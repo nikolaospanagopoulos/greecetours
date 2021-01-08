@@ -55,7 +55,7 @@ const Burger = () => {
     const [open,setOpen] = useState(false)
     return (
         <div>
-        <StyledBurger open={open} onClick={()=>setOpen(!open)}>
+        <StyledBurger id='styleburger'  open={open} onClick={()=>setOpen(!open)}>
             <div/>
             <div/>
             <div/>

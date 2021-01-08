@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expect to render Rating Component 1`] = `
+<div
+  className="rating"
+>
+  <span>
+    <i
+      className="far fa-star"
+      style={
+        Object {
+          "color": "blue",
+        }
+      }
+    />
+  </span>
+  <span>
+    <i
+      className="far fa-star"
+      style={
+        Object {
+          "color": "blue",
+        }
+      }
+    />
+  </span>
+  <span>
+    <i
+      className="far fa-star"
+      style={
+        Object {
+          "color": "blue",
+        }
+      }
+    />
+  </span>
+  <span>
+    <i
+      className="far fa-star"
+      style={
+        Object {
+          "color": "blue",
+        }
+      }
+    />
+  </span>
+  <span>
+    <i
+      className="far fa-star"
+      style={
+        Object {
+          "color": "blue",
+        }
+      }
+    />
+  </span>
+  <span>
+     
+     
+  </span>
+</div>
+`;

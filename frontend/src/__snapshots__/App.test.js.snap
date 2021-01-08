@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expect to render App Component 1`] = `
+<BrowserRouter>
+  <Header />
+  <main>
+    <Route
+      component={[Function]}
+      path="/order/:id"
+    />
+    <Route
+      component={[Function]}
+      path="/finalize"
+    />
+    <Route
+      component={[Function]}
+      path="/tourbuy"
+    />
+    <Route
+      component={[Function]}
+      path="/services"
+    />
+    <Route
+      component={[Function]}
+      path="/login"
+    />
+    <Route
+      component={[Function]}
+      path="/about"
+    />
+    <Route
+      component={[Function]}
+      path="/payment"
+    />
+    <Route
+      component={[Function]}
+      path="/register"
+    />
+    <Route
+      component={[Function]}
+      path="/profile"
+    />
+    <Route
+      component={[Function]}
+      path="/cart/:id?"
+    />
+    <Route
+      component={[Function]}
+      path="/tours/tour/:id"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/tours/:sort?"
+    />
+    <Route
+      component={[Function]}
+      path="/admin/userlist"
+    />
+    <Route
+      component={[Function]}
+      path="/admin/user/:id/edit"
+    />
+    <Route
+      component={[Function]}
+      path="/admin/tourlist"
+    />
+    <Route
+      component={[Function]}
+      path="/admin/tour/:id/edit"
+    />
+    <Route
+      component={[Function]}
+      path="/admin/orderlist"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+  </main>
+  <Footer />
+</BrowserRouter>
+`;

@@ -37,7 +37,7 @@ const CartPage = ({match,location,history}) => {
                       {cartItems.map(item => (
                           <div key={item.tour} className='cart-container'>
                               <div> <img className='cart-image' src={item.image} alt={item.name}/> </div>
-                              <div> <Link to={`/tours/tour/${item.tour}`} className='cart-title'> {item.name} </Link> </div>
+                              <div> <Link to={`/tours/tour/${item.tour}`} className='cart-link'> {item.name} </Link> </div>
                               <div> {item.price} $ </div>
                               <div> <div  className='carttour-select'> <h4 >Select places:</h4>
                   <select 
